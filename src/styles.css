@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+    height: 100%;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:host {
+    margin: 0;
+    display: block;
+    height: 100%;
+}
+.rounded-tab {
+    --same-as-angular-materials-blue-theme-color: #343dff;
+    margin: 10px 10px;
+    padding: 20px !important;
+    border-radius: 30px !important;
+    /* background-color: rgba(224, 255, 255, 0.95) !important; */
+    background-color: white !important;
+    box-shadow: 0px 0px 10px -6px var(--same-as-angular-materials-blue-theme-color) !important;
+    /* box-shadow: 0px 0px 10px 0px black !important; */
+    /* box-shadow: 0px 0px 10px 0px white !important; */
+}
+/* .form-input * {
+    background-color: white !important;
+} */

@@ -1,0 +1,42 @@
+:host {
+    margin: 20px 0;
+    display: block;
+    /* min-height: 100vh; */
+    box-sizing: border-box;
+    
+}
+#login-card {
+    display: block;
+    width: 20vw;
+    height: 50vh;
+    margin: 0 auto;
+}
+.logging-input {
+    width: 100%;
+    margin: 2vh 0;
+}
+.logging-input button {
+    background-color: transparent;
+    border: none;
+    margin-right: 8px;
+}
+.logging-buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 100%;
+}
+.logging-buttons div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.logging-buttons button {
+    margin: 10px 0;
+}
+.login-large-buttons button {
+    width: 100%;
+}
+.login-small-buttons button {
+    width: 45%;
+}

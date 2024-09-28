@@ -1,0 +1,10 @@
+:host(.large-button){
+    width: 100%;
+}
+:host(.small-button){
+    width: 45%;
+}
+button {
+    width: 100%;
+    margin: 10px 0;
+}

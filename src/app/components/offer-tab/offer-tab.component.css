@@ -1,0 +1,70 @@
+:host {
+    --same-as-angular-materials-blue-theme-color: #343dff;
+    margin: 10px 10px;
+    padding: 20px !important;
+    border-radius: 30px !important;
+    background-color: white !important;
+    box-shadow: 0px 0px 10px -6px var(--same-as-angular-materials-blue-theme-color) !important;
+}
+:host(.offer-tab-big) {
+    width: 100%;
+}
+:host(.offer-tab-small) {
+    display: flex; 
+    width: 45%;
+}
+.offers-container {
+    display: flex;
+    width: 80vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.offer-image {
+    border-radius:20px;
+    width: 25vh;
+    height: 25vh;
+}
+.offer-info-container {
+    width: 100%;
+    padding: 0 20px 0 20px;
+}
+.offer-title {
+    text-align: center;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.offer-available-seats-container {
+    display: inline-block;
+    width: 50%;
+}
+.offer-available-seats-label {
+    text-align: center;
+}
+.offer-price-label {
+    text-align: center;
+}
+.offer-available-seats {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.offer-price {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.offer-price-container {
+    display: inline-block;
+    width: 50%;
+}
+.example-button-container {
+    display: inline-block;
+    width: 100%;
+}
+.example-button-container button[mat-fab] {
+    width: 100%;
+}

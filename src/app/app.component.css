@@ -1,0 +1,34 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  /* background-color: rgb(250, 250, 250); */
+  background-color: rgb(240, 240, 240);
+  /* background-image: url(./shared/images/swietokrzyski_park_narodowy.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; */
+  padding: 20px;
+}
+.logo-spacer {
+    flex: 0.1 1;
+  }
+#logo {
+  margin-right: 20px;
+  font-size: 2rem;
+}
+#app-navbar {
+  --same-as-angular-materials-blue-theme-color: #343dff;
+  margin: 20px 10px;
+  padding: 50px !important;
+  border-radius: 30px !important;
+  background-color: white !important;
+  box-shadow: 0px 0px 10px -6px var(--same-as-angular-materials-blue-theme-color) !important;
+}
+
+button[mat-fab] {
+  width: 10%;
+  margin-left: 10px;
+  margin-right: 10px;
+  min-width: 120px;
+}

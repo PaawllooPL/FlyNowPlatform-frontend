@@ -1,0 +1,40 @@
+<div id="login-card" class="rounded-tab">
+    <mat-form-field appearance="fill" class="logging-input form-input">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="xyz@gmail.com">
+        <mat-icon matSuffix>alternate_email</mat-icon>
+        <mat-hint>Email you will use to log in</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="logging-input form-input">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Your_Username">
+        <mat-icon matSuffix>alternate_email</mat-icon>
+        <mat-hint>You will be visible under this name</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="logging-input">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide() ? 'password': 'text'" placeholder="password">
+        <button
+            mat-icon-button
+            matSuffix
+            (click)="togglePasswordVisibility($event)"    
+        >
+            <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-hint>Password you will use to log in</mat-hint>
+    </mat-form-field>
+    <div class="logging-buttons">
+        <div class="login-large-buttons">
+            <button mat-fab extended routerLink="/register">
+                <mat-icon iconPositionEnd>fiber_new</mat-icon>
+                Register
+            </button>
+        </div>
+        <div class="login-small-buttons">
+            <button mat-fab extended routerLink="/login">
+                <mat-icon iconPositionEnd>fingerprint</mat-icon>
+                Go back to log in
+            </button>
+        </div>
+    </div>
+</div>

@@ -6,6 +6,7 @@ import { signal } from '@angular/core';
 import { MatFabButton } from '@angular/material/button';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { ListButtonComponent } from '../../components/list-button/list-button.component';
+import { ListButtonContainerComponent } from '../../components/list-button-container/list-button-container.component';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -16,7 +17,8 @@ import { ListButtonComponent } from '../../components/list-button/list-button.co
     MatFabButton,
     RouterLink,
     RouterOutlet,
-    ListButtonComponent
+    ListButtonComponent,
+    ListButtonContainerComponent
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'

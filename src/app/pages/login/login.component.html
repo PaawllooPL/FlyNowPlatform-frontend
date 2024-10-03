@@ -17,23 +17,9 @@
         </button>
         <mat-hint>Password used when registering</mat-hint>
     </mat-form-field>
-    <div class="logging-buttons">
-        <div class="login-large-buttons">
-            <button mat-fab extended>
-                <mat-icon iconPositionEnd>fingerprint</mat-icon>
-                Log in
-            </button>
-        </div>
-        <div class="login-small-buttons">
-            <button mat-fab extended routerLink="/register">
-                <mat-icon iconPositionEnd>fiber_new</mat-icon>
-                Register
-            </button>
-            <button mat-fab extended>
-                <mat-icon iconPositionEnd>help</mat-icon>
-                Forgot password
-            </button>
-        </div>
+    <list-button-container>
+        <list-button class="large-button" link="/login" icon="fingerprint" text="Log in"></list-button>
+        <list-button class="small-button" link="/register" icon="fiber_new" text="Register"></list-button>
         <list-button class="small-button" link="/register" icon="help" text="Forgot password"></list-button>
-    </div>
+    </list-button-container>
 </div>

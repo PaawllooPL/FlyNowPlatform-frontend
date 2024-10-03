@@ -20,23 +20,3 @@
     border: none;
     margin-right: 8px;
 }
-.logging-buttons {
-    display: flex;
-    flex-direction: column;
-    margin: 20px auto;
-    width: 100%;
-}
-.logging-buttons div {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-.logging-buttons button {
-    margin: 10px 0;
-}
-.login-large-buttons button {
-    width: 100%;
-}
-.login-small-buttons button {
-    width: 45%;
-}

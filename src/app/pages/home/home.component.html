@@ -2,13 +2,10 @@
     <div class="filter-container rounded-tab">
         
     </div>
-    <div class="offers-container">
-        <offer-tab class="offer-tab-small"/>
-        <offer-tab class="offer-tab-small"/>
-        <offer-tab class="offer-tab-small"/>
-        <offer-tab class="offer-tab-small"/>
-        <offer-tab class="offer-tab-small"/>
-        <offer-tab class="offer-tab-small"/>
-        <offer-tab class="offer-tab-small"/>
-    </div>
+    <offer-tab-container>
+        <offer-tab *ngFor="let offer of offers" class="offer-tab-small"
+            [title]="offer.title"
+            [pricePerPerson]="offer.pricePerPerson"
+            [remainingSeats]="offer.remainingSeats"></offer-tab>
+    </offer-tab-container>
 </div>

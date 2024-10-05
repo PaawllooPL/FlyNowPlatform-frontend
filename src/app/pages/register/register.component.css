@@ -1,14 +1,11 @@
 :host {
     margin: 20px 0;
     display: block;
-    /* min-height: 100vh; */
-    box-sizing: border-box;
-    
+    box-sizing: border-box;    
 }
 #login-card {
     display: block;
     width: 20vw;
-    height: 60vh;
     margin: 0 auto;
 }
 .logging-input {

@@ -1,13 +1,13 @@
 <div id="login-card" class="rounded-tab">
     <mat-form-field appearance="fill" class="logging-input form-input">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="xyz@gmail.com">
+        <input matInput placeholder="jan.kowalski@gmail.com">
         <mat-icon matSuffix>alternate_email</mat-icon>
-        <mat-hint>Email used when registering</mat-hint>
+        <mat-hint>Email użyty podczas rejestracji</mat-hint>
     </mat-form-field>
     <mat-form-field appearance="fill" class="logging-input">
-        <mat-label>Password</mat-label>
-        <input matInput [type]="hide() ? 'password': 'text'" placeholder="password">
+        <mat-label>Hasło</mat-label>
+        <input matInput [type]="hide() ? 'password': 'text'" placeholder="MojeHaslo123!#">
         <button
             mat-icon-button
             matSuffix
@@ -15,11 +15,11 @@
         >
             <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
-        <mat-hint>Password used when registering</mat-hint>
+        <mat-hint>Hasło użyte podczas rejestracji</mat-hint>
     </mat-form-field>
     <list-button-container>
-        <list-button class="large-button" link="/login" icon="fingerprint" text="Log in"></list-button>
-        <list-button class="small-button" link="/register" icon="fiber_new" text="Register"></list-button>
-        <list-button class="small-button" link="/register" icon="help" text="Forgot password"></list-button>
+        <list-button class="large-button" link="/login" icon="fingerprint" text="Zaloguj"></list-button>
+        <list-button class="small-button" link="/register" icon="fiber_new" text="Zarejestruj"></list-button>
+        <list-button class="small-button" link="/register" icon="help" text="Przypomnij hasło"></list-button>
     </list-button-container>
 </div>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'offer-tab-container',
+  selector: 'app-offer-tab-container',
   standalone: true,
   imports: [],
   templateUrl: './offer-tab-container.component.html',

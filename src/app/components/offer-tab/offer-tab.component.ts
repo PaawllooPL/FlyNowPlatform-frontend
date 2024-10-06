@@ -5,7 +5,7 @@ import { MatFabButton } from '@angular/material/button';
 import { ListButtonContainerComponent } from '../list-button-container/list-button-container.component';
 
 @Component({
-  selector: 'offer-tab',
+  selector: 'app-offer-tab',
   standalone: true,
   imports: [MatIcon, ListButtonComponent, MatFabButton, ListButtonContainerComponent, ListButtonComponent],
   templateUrl: './offer-tab.component.html',

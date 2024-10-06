@@ -4,7 +4,7 @@ import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'list-button',
+  selector: 'app-list-button',
   standalone: true,
   imports: [MatIcon, RouterLink, MatFabButton],
   templateUrl: './list-button.component.html',

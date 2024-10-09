@@ -1,25 +1,22 @@
 <div id="login-card" class="rounded-tab">
-    <mat-form-field appearance="fill" class="logging-input form-input">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="jan.kowalski@gmail.com">
-        <mat-icon matSuffix>alternate_email</mat-icon>
-        <mat-hint>Email użyty podczas rejestracji</mat-hint>
-    </mat-form-field>
-    <mat-form-field appearance="fill" class="logging-input">
-        <mat-label>Hasło</mat-label>
-        <input matInput [type]="hide() ? 'password': 'text'" placeholder="MojeHaslo123!#">
-        <button
-            mat-icon-button
-            matSuffix
-            (click)="togglePasswordVisibility($event)"    
-        >
-            <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-        <mat-hint>Hasło użyte podczas rejestracji</mat-hint>
-    </mat-form-field>
-    <app-list-button-container>
-        <app-list-button class="large-button" link="/login" icon="fingerprint" text="Zaloguj"></app-list-button>
-        <app-list-button class="small-button" link="/register" icon="fiber_new" text="Zarejestruj"></app-list-button>
-        <app-list-button class="small-button" link="/register" icon="help" text="Przypomnij hasło"></app-list-button>
-    </app-list-button-container>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <app-form-input-text 
+            inputFormControlName="email" 
+            inputLabel="Email" 
+            inputPlaceholder="jan.kowalski@gmail.com" 
+            inputIcon="alternate_email" 
+            inputHint="Email użyty podczas rejestracji">
+        </app-form-input-text>
+        <app-form-hideable-input-text
+            inputFormControlName="password"
+            inputLabel="Hasło"
+            inputPlaceholder="MojeHaslo123!#"
+            inputHint="Hasło użyte podczas rejestracji">
+        </app-form-hideable-input-text>
+        <app-list-button-container>
+            <app-list-submit-button class="large-button" icon="fingerprint" text="Zaloguj"></app-list-submit-button>
+            <app-list-button class="small-button" link="/register" icon="fiber_new" text="Zarejestruj"></app-list-button>
+            <app-list-button class="small-button" link="/register" icon="help" text="Przypomnij hasło"></app-list-button>
+        </app-list-button-container>
+    </form>
 </div>

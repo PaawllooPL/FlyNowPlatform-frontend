@@ -1,42 +1,29 @@
+<!-- TO DO: <br ><span *ngIf="false" style="color: red; font-weight: 500; font-size: 0.9rem;">Hasło musi być dłuższe</span> -->
 <div id="login-card" class="rounded-tab">
-    <mat-form-field appearance="fill" class="logging-input form-input">
-        <mat-label>Nazwa użytkownika</mat-label>
-        <input matInput placeholder="JanKowalski257">
-        <mat-icon matSuffix>account_circle</mat-icon>
-        <mat-hint>Tak inni będą cię widzieć</mat-hint>
-    </mat-form-field>
-    <mat-form-field appearance="fill" class="logging-input form-input">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="jan.kowalski@gmail.com">
-        <mat-icon matSuffix>alternate_email</mat-icon>
-        <mat-hint>Email, którym będziesz się logować
-            <!--  TO DO:   <br><span style="color: red; font-weight: 500; font-size: 0.9rem;">Hasło musi być dłuższe</span> -->
-        </mat-hint>
-    </mat-form-field>
-    <mat-form-field appearance="fill" class="logging-input">
-        <mat-label>Hasło</mat-label>
-        <input matInput [type]="hide() ? 'password': 'text'" placeholder="MojeHaslo123!#">
-        <button
-            mat-icon-button
-            matSuffix
-            (click)="togglePasswordVisibility($event)"    
-        >
-            <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-        <mat-hint>Hasło, którym będziesz się logować</mat-hint>
-    </mat-form-field>
-    <div class="logging-buttons">
-        <div class="login-large-buttons">
-            <button mat-fab extended routerLink="/register">
-                <mat-icon iconPositionEnd>fiber_new</mat-icon>
-                Register
-            </button>
-        </div>
-        <div class="login-small-buttons">
-            <button mat-fab extended routerLink="/login">
-                <mat-icon iconPositionEnd>fingerprint</mat-icon>
-                Go back to log in
-            </button>
-        </div>
-    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <app-form-input-text 
+            inputFormControlName="username"
+            inputLabel="Nazwa użytkownika"
+            inputIcon="account_circle"
+            inputHint="Tak inni będą cię widzieć"
+            inputPlaceholder="JanKowalski257">
+        </app-form-input-text>
+        <app-form-input-text 
+            inputFormControlName="email"
+            inputLabel="Email"
+            inputIcon="alternate_email"
+            inputHint="Email, którym będziesz się logować"
+            inputPlaceholder="JanKowalski257">
+        </app-form-input-text>
+        <app-form-hideable-input-text
+            inputFormControlName="password"
+            inputLabel="Hasło"
+            inputHint="Email, którym będziesz się logować"
+            inputPlaceholder="JanKowalski257">
+        </app-form-hideable-input-text>
+        <app-list-button-container>
+            <app-list-submit-button text="Register" icon="fiber_new" class="large-button"></app-list-submit-button>
+            <app-list-button icon="fingerprint" text="Go back to log in" link="/login" class="small-button"></app-list-button>
+        </app-list-button-container>
+    </form>
 </div>

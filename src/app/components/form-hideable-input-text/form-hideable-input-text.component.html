@@ -1,0 +1,13 @@
+<mat-form-field appearance="fill" class="form-text-input">
+            <mat-label>Hasło</mat-label>
+            <input [formControlName]="inputFormControlName" matInput [type]="hide() ? 'password': 'text'" placeholder="MojeHaslo123!#">
+            <button
+                type="button"
+                mat-icon-button
+                matSuffix
+                (click)="toggleInputVisibility($event)"    
+            >
+            <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-hint>Hasło użyte podczas rejestracji</mat-hint>
+</mat-form-field>

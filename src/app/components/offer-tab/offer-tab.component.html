@@ -1,17 +1,17 @@
-<img src="swietokrzyski_park_narodowy.jpg" class="offer-image">
+<img src={{imagePath}} class="offer-image">
 <div class="offer-info-container">
     <div class="offer-title" id="offer-title">{{title}}</div>
     <div>
         <div class="offer-detail-container">
-            <div class="offer-detail-label">pozostałe miejsca:</div>
-            <div class="offer-detail-info">{{remainingSeats}}</div>
+            <div class="offer-detail-label">rodzaj statku powietrznego:</div>
+            <div class="offer-detail-info">{{aircraftType}}</div>
         </div>
         <div class="offer-detail-container">
             <div class="offer-detail-label">cena za osobe:</div>
-            <div class="offer-detail-info">{{pricePerPerson}}</div>
+            <div class="offer-detail-info">{{pricePerPerson}} zł</div>
         </div>
     </div>
     <app-list-button-container>
-        <app-list-button class="large-button" link="/offer" icon="arrow_right_alt" text="Sprawdź ofertę"></app-list-button>
+        <app-list-button class="large-button" [link]="offerDetailLink" icon="arrow_right_alt" text="Sprawdź ofertę"></app-list-button>
     </app-list-button-container>
 </div>

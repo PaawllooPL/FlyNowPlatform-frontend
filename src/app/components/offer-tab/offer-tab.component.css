@@ -11,7 +11,7 @@
 }
 :host(.offer-tab-small) {
     display: flex; 
-    width: 45%;
+    width: 48%;
 }
 .offers-container {
     display: flex;

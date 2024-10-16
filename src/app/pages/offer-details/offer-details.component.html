@@ -1,0 +1,60 @@
+<div class="content-wrapper">
+    <img class="offer-image rounded-tab" [src]="offerDetails?.imagePath">
+    <div class="offer-main-info rounded-tab">
+        <div class="offer-title">
+            <h1 id="title">{{offerDetails?.title}}</h1>
+        </div>
+        <div class="offer-side-info-container">
+            <div class="offer-side-info">
+                <div class="offer-detail-container">
+                    <div class="offer-detail-inner-container">
+                        <div class="offer-detail-label">rodzaj statku powietrznego:</div>
+                        <div class="offer-detail-info">{{offerDetails?.aircraftType}}</div>
+                    </div>
+                    <div class="offer-detail-inner-container">
+                        <div class="offer-detail-label">cena za osobę:</div>
+                        <div class="offer-detail-info">{{offerDetails?.pricePerPerson}} zł</div>
+                    </div>
+                </div>
+                <div class="offer-detail-container">
+                    <div class="offer-detail-inner-container">
+                        <div class="offer-detail-label">liczba dostęnych miejsc:</div>
+                        <div class="offer-detail-info">{{offerDetails?.remainingSeats}}</div>
+                    </div>
+                    <div class="offer-detail-inner-container">
+                        <div class="offer-detail-label">organizator:</div>
+                        <div class="offer-detail-info">{{offerDetails?.eventOrganizerName}}</div>
+                    </div>
+                </div>
+                <div class="offer-detail-container">
+                    <div class="offer-detail-inner-container">
+
+                        <div class="offer-detail-label">średnia ocena organizatora:</div>
+                        <div class="offer-detail-info">{{offerDetails?.eventOrganizerRating}}</div>
+                    </div>
+                </div>
+            </div>
+            <app-list-button-container>
+                <!-- TODO: font size -->
+                <app-list-button id="buy-offer-button" class="small-button" [link]="" icon="monetization_on"
+                    text="Kup teraz"></app-list-button>
+            </app-list-button-container>
+        </div>
+    </div>
+</div>
+<div class="content-wrapper" style="align-items: flex-start;">
+    <div class="offer-description rounded-tab" id="description-container">
+        <span id="offer-description-label">Opis</span>
+        {{offerDetails?.description}}
+    </div>
+    <div class="offer-comments rounded-tab" id="comments-container">
+        <span id="offer-comments-label">Opinie o organizatorze</span>
+        <app-comment-container>
+            <app-comment *ngFor="let comment of offerDetails?.comments"
+                [userId]="comment.userId"
+                [username]="comment.username"
+                [rating]="comment.rating"
+                [content]="comment.content"></app-comment>
+        </app-comment-container>
+    </div>
+</div>

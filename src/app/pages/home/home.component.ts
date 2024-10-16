@@ -2,59 +2,35 @@ import { Component } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { OfferTabComponent } from '../../components/offer-tab/offer-tab.component';
 import { OfferTabContainerComponent } from '../../components/offer-tab-container/offer-tab-container.component';
-import { OfferPreview } from '../../models/offer/offerPreview';
-import { NgFor } from '@angular/common';
+import { OfferService } from '../../services/offer/offer.service';
+import { CommonModule } from '@angular/common';
+import { OfferPreview } from '../../models/offer/offerPreview.interface';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatIcon, OfferTabComponent, OfferTabContainerComponent, NgFor],
+  imports: [MatIcon, OfferTabComponent, OfferTabContainerComponent, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  offers: OfferPreview[] = [
-    {
-        title: 'Przelot awionetką nad jeziorem',
-        pricePerPerson: 299,
-        remainingSeats: 8,
-        offerId: 1, // Unikalny identyfikator oferty
-    },
-    {
-        title: 'Widok z balonu nad miastem',
-        pricePerPerson: 399,
-        remainingSeats: 4,
-        offerId: 2,
-    },
-    {
-        title: 'Lot szybowcem nad górami',
-        pricePerPerson: 450,
-        remainingSeats: 6,
-        offerId: 3,
-    },
-    {
-        title: 'Przelot helikopterem nad wybrzeżem',
-        pricePerPerson: 600,
-        remainingSeats: 3,
-        offerId: 4,
-    },
-    {
-        title: 'Lot samolotem Cessna wzdłuż rzeki',
-        pricePerPerson: 350,
-        remainingSeats: 10,
-        offerId: 5,
-    },
-    {
-        title: 'Podniebna przygoda w balonie',
-        pricePerPerson: 500,
-        remainingSeats: 2,
-        offerId: 6,
-    },
-    {
-        title: 'Widokowy lot nad wulkanem',
-        pricePerPerson: 700,
-        remainingSeats: 1,
-        offerId: 7,
-    },
-];
+    offersLoaded: boolean = false;
+    mockOffers?: OfferPreview[];
 
+    constructor(private offerService: OfferService) {}
+    
+    fetchAllOffers(): void {
+        this.offerService.getAllOffers().subscribe(
+            (data) => {
+                this.mockOffers = data;
+                this.offersLoaded = true;
+            },
+            (error) => {
+                console.error('Error fetching all offers', error);
+                this.offersLoaded = false;
+            }
+        )
+    }
+    ngOnInit() {
+        this.fetchAllOffers();
+    }
 }

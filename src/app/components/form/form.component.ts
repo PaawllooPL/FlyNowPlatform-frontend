@@ -27,14 +27,5 @@ import { FormInputTextComponent } from '../form-input-text/form-input-text.compo
   styleUrl: './form.component.css'
 })
 export class FormComponent {
-  // loginForm: FormGroup = "";
-  @Input() funkcja :any;
-  constructor(private fb:FormBuilder) {
-    // this.loginForm = this.fb.group({
-    //   email: ['default']
-    // });
-  }
-  // onSubmit() {
-  //   console.log(this.loginForm.value)
-  // }
+
 }

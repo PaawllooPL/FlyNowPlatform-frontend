@@ -3,6 +3,7 @@ import { MatIcon } from '@angular/material/icon';
 import { ListButtonComponent } from '../list-button/list-button.component';
 import { MatFabButton } from '@angular/material/button';
 import { ListButtonContainerComponent } from '../list-button-container/list-button-container.component';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-offer-tab',
@@ -12,7 +13,15 @@ import { ListButtonContainerComponent } from '../list-button-container/list-butt
   styleUrl: './offer-tab.component.css'
 })
 export class OfferTabComponent {
+
   @Input() title?: string;
   @Input() pricePerPerson?: number;
-  @Input() remainingSeats?: number;
+  @Input() aircraftType?: string;
+  @Input() imagePath?: string;
+  @Input() offerId!: number;
+  offerDetailLink!: string;
+  
+  ngOnInit() {
+    this.offerDetailLink = "/offer" + "/" + this.offerId + "/details";
+  }
 }

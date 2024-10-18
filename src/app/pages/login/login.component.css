@@ -7,7 +7,7 @@
 }
 #login-card {
     display: block;
-    width: 20vw;
+    width: 24vw;
     margin: 0 auto;
 }
 .logging-input {
@@ -18,8 +18,4 @@
     background-color: transparent;
     border: none;
     margin-right: 8px;
-}
-#dupa {
-    display: block;
-    margin: 0 auto;
 }

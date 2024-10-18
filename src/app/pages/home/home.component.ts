@@ -5,10 +5,11 @@ import { OfferTabContainerComponent } from '../../components/offer-tab-container
 import { OfferService } from '../../services/offer/offer.service';
 import { CommonModule } from '@angular/common';
 import { OfferPreview } from '../../models/offer/offerPreview.interface';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatIcon, OfferTabComponent, OfferTabContainerComponent, CommonModule],
+  imports: [MatIcon, OfferTabComponent, OfferTabContainerComponent, CommonModule, MatProgressSpinner],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

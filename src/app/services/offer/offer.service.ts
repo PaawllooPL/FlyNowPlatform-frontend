@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { delay, NotFoundError, Observable, of, throwError } from 'rxjs';
+import { delay, Observable, of, throwError } from 'rxjs';
 import { OfferPreview } from '../../models/offer/offerPreview.interface';
 import { OfferDetails } from '../../models/offer/offerDetails.interface';
-import { OfferComment } from '../../models/comment/offerComment.interface';
 @Injectable({
   providedIn: 'root'
 })

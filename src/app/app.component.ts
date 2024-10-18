@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButton, MatFabButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
@@ -7,6 +7,7 @@ import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { MatToolbar } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { Roles } from './models/roles.enum';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -22,11 +23,15 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     MatIconButton,
     MatFabButton,
     MatTooltipModule,
-    CommonModule
+    CommonModule,
+    NgIf
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'FlyNow';
+  role: string = Roles.User;
+  Roles = Roles;
+  requiredRoles = [Roles.Admin, Roles.Organizer, Roles.User];
 }

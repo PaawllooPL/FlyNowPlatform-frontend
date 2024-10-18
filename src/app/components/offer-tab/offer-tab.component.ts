@@ -19,8 +19,9 @@ export class OfferTabComponent {
   @Input() aircraftType?: string;
   @Input() imagePath?: string;
   @Input() offerId!: number;
-  offerDetailLink: string = environment.appUrl.offersList + '/' + this.offerId;
-  
+  offerDetailLink?: string; 
+
   ngOnInit() {
+    this.offerDetailLink = environment.appUrl.offersList + '/' + this.offerId.toString();
   }
 }

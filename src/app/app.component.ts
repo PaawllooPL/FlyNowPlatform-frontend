@@ -33,5 +33,5 @@ export class AppComponent {
   title = 'FlyNow';
   role: string = Roles.User;
   Roles = Roles;
-  requiredRoles = [Roles.Admin, Roles.Organizer, Roles.User];
+  requiredRoles: Array<string> = [Roles.Admin, Roles.Organizer, Roles.User];
 }

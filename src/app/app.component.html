@@ -1,18 +1,18 @@
 <mat-toolbar class="rounded-tab" id="app-navbar">
   <img src="/images/logo.jpg" width="100px" height="100px">
   <span class="logo-spacer"></span>
-    <!-- <span id="logo">Fly Now</span> -->
-    <span class="logo-spacer"></span>
-      <button mat-fab extended matTooltip="Strona główna" routerLink="/home">
-        <mat-icon>home</mat-icon>
-        <span>Strona główna</span>
-      </button>
-      <button mat-fab extended matTooltip="Opcje konta" [matMenuTriggerFor]="accountMenu">
-        <mat-icon>account_circle</mat-icon>
-        <span>Konto</span>
-      </button>
-      <mat-menu #accountMenu="matMenu">
-        <button mat-menu-item>Opcja 1</button>
-      </mat-menu>
-  </mat-toolbar>
-  <router-outlet></router-outlet>
+  <!-- <span id="logo">Fly Now</span> -->
+  <span class="logo-spacer"></span>
+  <button mat-fab extended matTooltip="Strona główna" routerLink="/offers">
+    <mat-icon>home</mat-icon>
+    <span>Strona główna</span>
+  </button>
+  <button *ngIf="requiredRoles.includes(role)" mat-fab extended matTooltip="Opcje konta" [matMenuTriggerFor]="accountMenu" routerLink="/account">
+    <mat-icon>account_circle</mat-icon>
+    <span>Konto</span>
+  </button>
+  <mat-menu #accountMenu="matMenu">
+    <button mat-menu-item>Opcja 1</button>
+  </mat-menu>
+</mat-toolbar>
+<router-outlet></router-outlet>

@@ -12,7 +12,6 @@ import { ListSubmitButtonComponent } from '../../components/list-submit-button/l
 import { FormComponent } from '../../components/form/form.component';
 import { FormInputTextComponent } from '../../components/form-input-text/form-input-text.component';
 import { FormHideableInputTextComponent } from '../../components/form-hideable-input-text/form-hideable-input-text.component';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -30,7 +29,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     FormComponent,
     FormInputTextComponent,
     FormHideableInputTextComponent,
-    MatProgressSpinnerModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'

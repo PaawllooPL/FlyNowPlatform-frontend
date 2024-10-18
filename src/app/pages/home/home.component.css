@@ -28,9 +28,12 @@
     width: 25vh;
     height: 25vh;
 }
+#loading-offers-spinner {
+    left: 50%;
+    top: 20vh;
+}
 .offer-info-container {
     width: 100%;
-    /* flex: 1; */
     padding: 0 20px 0 20px;
 }
 .offer-title {

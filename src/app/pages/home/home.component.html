@@ -3,11 +3,7 @@
         asonfaosfn asnfaosfn asfnasfnasfn aosnfa nsfasnf ao sfoa nsfoansasf asf nasfo nasof najsf najksf najsf noasn fjaosknfjkasnfk ansfkoankosan fasm 
     </div>
     <app-offer-tab-container>
-        <app-offer-tab class="offer-tab-small"
-            *ngIf="!offersLoaded"
-            title="loading">
-
-        </app-offer-tab>
+        <mat-spinner *ngIf="!offersLoaded" id="loading-offers-spinner"></mat-spinner>
         <app-offer-tab *ngFor="let offer of mockOffers" class="offer-tab-small"
             [offerId]="offer.offerId"
             [title]="offer.title"

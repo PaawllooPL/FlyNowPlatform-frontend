@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, inject } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -11,6 +11,10 @@ import { FormHideableInputTextComponent } from '../../components/form-hideable-i
 import { ListButtonContainerComponent } from '../../components/list-button-container/list-button-container.component';
 import { ListButtonComponent } from '../../components/list-button/list-button.component';
 import { ListSubmitButtonComponent } from "../../components/list-submit-button/list-submit-button.component";
+import { environment } from '../../../environments/environment.development';
+import { AuthService } from '../../services/auth/auth.service';
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-register',
   standalone: true,
@@ -26,20 +30,25 @@ import { ListSubmitButtonComponent } from "../../components/list-submit-button/l
     FormHideableInputTextComponent,
     ListButtonContainerComponent,
     ListButtonComponent,
-    ListSubmitButtonComponent
+    ListSubmitButtonComponent,
+],
+providers: [
+  
 ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
+
 export class RegisterComponent {
   registerForm: FormGroup;
   hide = signal(true);
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private authService: AuthService) {
     this.registerForm = this.fb.group({});
   }
   onSubmit() {
     console.log(this.registerForm.value);
+    this.authService.register(this.registerForm.value)
   }
   togglePasswordVisibility(event: MouseEvent) {
     this.hide.set(!this.hide());

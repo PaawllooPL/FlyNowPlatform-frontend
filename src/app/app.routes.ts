@@ -29,13 +29,13 @@ export const routes: Routes = [
         pathMatch: 'full',
     },
     {
-        path: 'offers/:id',
-        component: OfferDetailsComponent,
+        path: 'offers/create',
+        component: CreateOfferComponent,
         pathMatch: 'full',
     },
     {
-        path: 'offers/create',
-        component: CreateOfferComponent,
+        path: 'offers/:id',
+        component: OfferDetailsComponent,
         pathMatch: 'full',
     },
     {

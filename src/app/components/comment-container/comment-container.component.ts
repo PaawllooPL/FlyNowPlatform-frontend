@@ -15,8 +15,8 @@ export class CommentContainerComponent {
   commentForm: FormGroup;
   constructor(private fb: FormBuilder) {
     this.commentForm = this.fb.group({
-      commentFormInput: [''],
-      commentRating: ['']
+      content: [''],
+      rating: ['']
     });
   }
   onCommentSubmit() {

@@ -36,8 +36,8 @@ export class CreateOfferComponent {
 
     const form = new FormData();
     form.append('title', this.createOfferForm.get('createOfferTitle')?.value);
-    form.append('seats', this.createOfferForm.get('createOfferSeats')?.value);
-    form.append('price', this.createOfferForm.get('createOfferPrice')?.value);
+    form.append('availableSeats', this.createOfferForm.get('createOfferSeats')?.value);
+    form.append('pricePerPerson', this.createOfferForm.get('createOfferPrice')?.value);
     form.append('aircraftType', this.createOfferForm.get('aircraftTypeOption')?.value);
     form.append('description', this.createOfferForm.get('createOfferDescription')?.value);
     form.append('image', this.selectedFile, this.selectedFile!.name);

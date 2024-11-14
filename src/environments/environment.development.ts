@@ -1,6 +1,12 @@
 export const environment = {
-    apiUrl: 'http://localhost:8000/api/v1',
-    offerDetails: '/details',
+    apiUrl: {
+        baseUrl: 'http://localhost:8080/api/v1',
+        offer: '/offers',
+        offerDetails: '/details',
+        register: '/authentication/register',
+
+        get registerUrl() {return `${this.baseUrl}${this.register}`;}
+    },
     appUrl: {
         offersList: '/offers',
     },

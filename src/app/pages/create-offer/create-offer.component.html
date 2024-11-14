@@ -1,9 +1,11 @@
 <div class="rounded-tab offer-form-container">
 
     <form [formGroup]="createOfferForm" (ngSubmit)="onCreateFormSubmit()" id="add-offer-form">
+        
         <app-form-input-text inputPlaceholder="Przelot awionetką nad pięknym lasem" inputLabel="Tytuł oferty"
             inputFormControlName="createOfferTitle"></app-form-input-text>
-        <div class="three-per-row-container">
+        
+            <div class="three-per-row-container">
             <div class="three-per-row-item">
                 <app-form-input-text inputPlaceholder="8" inputLabel="Liczba miejsc"
                     inputFormControlName="createOfferSeats"></app-form-input-text>
@@ -19,18 +21,20 @@
                 </select>
             </div>
         </div>
+        
         <fieldset id="description-fieldset">
             <legend style="margin: 0 auto; font-size: 1.3rem;">Opis</legend>
             <textarea formControlName="createOfferDescription" id="description-textarea" rows="5"></textarea>
         </fieldset>
+        
         <button type="button" mat-fab extended (click)="fileInput.click()">
             <mat-icon>photo</mat-icon>Choose File</button>
         <input formControlName="createOfferImage" hidden (change)="onFileSelected($event)" #fileInput type="file"
             accept="image/*">
         <span class="file-name">{{selectedFile?.name}}</span>
+        
         <div class="submit-button-container">
             <app-list-submit-button text="Dodaj ofertę" icon="add_to_photos"></app-list-submit-button>
-
         </div>
     </form>
 </div>

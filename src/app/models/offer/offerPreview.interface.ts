@@ -3,5 +3,5 @@ export interface OfferPreview {
     title: string;
     pricePerPerson: number;
     aircraftType: string;
-    imagePath: string;
+    imageFilename: string;
 }

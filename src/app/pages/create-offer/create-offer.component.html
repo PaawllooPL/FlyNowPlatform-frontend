@@ -5,7 +5,7 @@
         <app-form-input-text inputPlaceholder="Przelot awionetką nad pięknym lasem" inputLabel="Tytuł oferty"
             inputFormControlName="createOfferTitle"></app-form-input-text>
         
-            <div class="three-per-row-container">
+        <div class="row-container">
             <div class="three-per-row-item">
                 <app-form-input-text inputPlaceholder="8" inputLabel="Liczba miejsc"
                     inputFormControlName="createOfferSeats"></app-form-input-text>
@@ -19,6 +19,21 @@
                 <select id="select-type-id" class="select-type" formControlName="aircraftTypeOption">
                     <option *ngFor="let type of aircraftTypes" [value]="type">{{type}}</option>
                 </select>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="two-per-row-item">
+                <app-form-input-number inputPlaceholder="45" inputFormControlName="createOfferDuration" inputLabel="Długość lotu"></app-form-input-number>
+            </div>
+            <div class="two-per-row-item">
+                <mat-form-field>
+                    <mat-label>Meeting date</mat-label>
+                    <input matInput [matDatepicker]="datepicker">
+                    <mat-datepicker #datepicker/>
+                    <mat-datepicker-toggle [for]="datepicker" matSuffix/>
+                  </mat-form-field>
+                  
+                <!-- <app-form-input-date></app-form-input-date> -->
             </div>
         </div>
         

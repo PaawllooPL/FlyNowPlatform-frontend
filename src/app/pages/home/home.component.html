@@ -4,8 +4,8 @@
     </div>
     <app-offer-tab-container>
         <mat-spinner *ngIf="!offersLoaded" id="loading-offers-spinner"></mat-spinner>
-        <app-offer-tab *ngFor="let offer of mockOffers" class="offer-tab-small"
-            [offerId]="offer.offerId"
+        <app-offer-tab *ngFor="let offer of offersPreview" class="offer-tab-small"
+            [flightId]="offer.flightId"
             [title]="offer.title"
             [pricePerPerson]="offer.pricePerPerson"
             [aircraftType]="offer.aircraftType"

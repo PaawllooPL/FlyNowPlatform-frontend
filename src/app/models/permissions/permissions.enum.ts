@@ -1,5 +1,6 @@
 export enum Permission {
-    CreateOfferPermission = 'CreateOfferPermission',
-    ViewOfferPermission = 'ViewOfferPermission',
-    BuyOfferPermission = 'BuyOfferPermission',
-}
+    CreateOffer = 'CreateOfferPermission',
+    ViewOffer = 'ViewOfferPermission',
+    BuyOffer = 'BuyOfferPermission',
+    ViewAccountSettings = 'ViewAccountSettingsPermission'
+} 

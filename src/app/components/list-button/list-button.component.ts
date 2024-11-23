@@ -14,4 +14,5 @@ export class ListButtonComponent {
   @Input() icon?: string;
   @Input() link?: string;
   @Input() text?: string;
+  @Input() disabled: boolean = false;
 }

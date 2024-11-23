@@ -1,5 +1,5 @@
 <div class="content-wrapper">
-    <img class="offer-image rounded-tab" [src]="offerDetails?.imagePath">
+        <img class="offer-image rounded-tab" [src]="imageUrl">
     <div class="offer-main-info rounded-tab">
         <div class="offer-title">
             <h1 id="title">{{offerDetails?.title}}</h1>
@@ -29,15 +29,19 @@
                 <div class="offer-detail-container">
                     <div class="offer-detail-inner-container">
 
-                        <div class="offer-detail-label">średnia ocena organizatora:</div>
-                        <div class="offer-detail-info">{{offerDetails?.eventOrganizerRating}}</div>
+                        <div *ngIf="true" class="offer-detail-label">średnia ocena organizatora:</div>
+                        <div class="offer-detail-info">{{offerDetails?.eventOrganizerRating ?? "brak ocen"}}</div>
                     </div>
                 </div>
             </div>
             <app-list-button-container>
                 <!-- TODO: font size -->
-                <app-list-button id="buy-offer-button" class="small-button" [link]="" icon="monetization_on"
+                <app-list-button *ngIf="this.isLoggedIn" [disabled]="!this.offerDetails?.canBuy" id="buy-offer-button" class="small-button" [link]="" icon="monetization_on"
                     text="Kup teraz"></app-list-button>
+                    <!-- <h1>{{this.offerDetails!.canBuy}}</h1> -->
+                <app-list-button *ngIf="!this.isLoggedIn" id="buy-offer-button" class="small-button" link="/login" icon="account_circle"
+                    text="Zaloguj, aby kupić"></app-list-button>
+                
             </app-list-button-container>
         </div>
     </div>

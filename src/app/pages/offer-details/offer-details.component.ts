@@ -1,24 +1,31 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OfferService } from '../../services/offer/offer.service';
 import { OfferDetails } from '../../models/offer/offerDetails.interface';
 import { ListButtonContainerComponent } from '../../components/list-button-container/list-button-container.component';
 import { ListButtonComponent } from '../../components/list-button/list-button.component';
 import { CommentComponent } from '../../components/comment/comment.component';
 import { CommentContainerComponent } from '../../components/comment-container/comment-container.component';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
+import { environment } from '../../../environments/environment.development';
+import { AuthService } from '../../services/auth/auth.service';
+import { Permission } from '../../models/permissions/permissions.enum';
 @Component({
   selector: 'app-offer-details',
   standalone: true,
-  imports: [ListButtonContainerComponent, ListButtonComponent, CommentComponent, CommentContainerComponent, NgFor],
+  imports: [ListButtonContainerComponent, ListButtonComponent, CommentComponent, CommentContainerComponent, NgFor
+    ,NgIf
+  ],
   templateUrl: './offer-details.component.html',
   styleUrl: './offer-details.component.css'
 })
 export class OfferDetailsComponent {
   offerDetails?: OfferDetails;
   isOfferLoaded: boolean = false;
-
-  constructor(private route: ActivatedRoute, private offerService: OfferService) { }
+  isLoggedIn: boolean = this.authService.hasPermission(Permission.BuyOffer)
+  imageUrl: string = "";
+  Permission = Permission;
+  constructor(private route: ActivatedRoute, private offerService: OfferService, private router: Router, public authService: AuthService) { }
 
   ngOnInit() {
     this.loadOfferDetails();
@@ -40,9 +47,11 @@ export class OfferDetailsComponent {
         next: (offer) => {
           this.offerDetails = offer;
           this.isOfferLoaded = true;
+          this.imageUrl = environment.apiUrl.offerImageUrl(offer.imageFilename);
         },
         error: (error) => {
           console.error(error);
+          this.router.navigate(['/error']);
         }
       });
     });

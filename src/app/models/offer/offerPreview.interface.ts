@@ -1,5 +1,5 @@
 export interface OfferPreview {
-    offerId: number;
+    flightId: number;
     title: string;
     pricePerPerson: number;
     aircraftType: string;

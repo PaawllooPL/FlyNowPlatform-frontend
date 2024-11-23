@@ -2,15 +2,29 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FormInputTextComponent } from "../../components/form-input-text/form-input-text.component";
 import { NgFor } from '@angular/common';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatFabButton } from '@angular/material/button';
 import { ListSubmitButtonComponent } from '../../components/list-submit-button/list-submit-button.component';
 import { MatIcon } from '@angular/material/icon';
-
+import { FormInputNumberComponent } from "../../components/form-input-number/form-input-number.component";
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { FormInputDateComponent } from "../../components/form-input-date/form-input-date.component";
+import { MatFormFieldModule } from '@angular/material/form-field';
 @Component({
   selector: 'app-create-offer',
   standalone: true,
-  imports: [ReactiveFormsModule, FormInputTextComponent, NgFor, MatFormField, MatLabel, MatFabButton, ListSubmitButtonComponent, MatIcon],
+  imports: [ReactiveFormsModule,
+    FormInputTextComponent,
+    NgFor,
+    MatFabButton,
+    ListSubmitButtonComponent,
+    MatIcon,
+    FormInputNumberComponent,
+    MatDatepickerModule,
+    FormInputDateComponent,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    
+  ],
   templateUrl: './create-offer.component.html',
   styleUrl: './create-offer.component.css'
 })
@@ -41,6 +55,7 @@ export class CreateOfferComponent {
     form.append('aircraftType', this.createOfferForm.get('aircraftTypeOption')?.value);
     form.append('description', this.createOfferForm.get('createOfferDescription')?.value);
     form.append('image', this.selectedFile, this.selectedFile!.name);
+    form.append('duration', this.createOfferForm.get('createOfferDuration')?.value);
     
     form.forEach((value, key) => {
       console.log(key + ': ' + value);

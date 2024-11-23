@@ -3,7 +3,7 @@
     margin: 0 auto;
     min-height: 50vh;
 }
-.three-per-row-container {
+.row-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -11,6 +11,9 @@
 }
 .three-per-row-item {
     width: 30%;
+}
+.two-per-row-item {
+    width: 45%;
 }
 .select-type {
     margin-top: -2px;

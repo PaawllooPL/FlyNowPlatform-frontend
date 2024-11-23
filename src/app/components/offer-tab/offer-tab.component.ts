@@ -18,10 +18,10 @@ export class OfferTabComponent {
   @Input() pricePerPerson?: number;
   @Input() aircraftType?: string;
   @Input() imagePath?: string;
-  @Input() offerId!: number;
+  @Input() flightId!: number;
   offerDetailLink?: string; 
-
+  
   ngOnInit() {
-    this.offerDetailLink = environment.appUrl.offersList + '/' + this.offerId.toString();
+    this.offerDetailLink = environment.appUrl.offersList + '/' + this.flightId.toString();
   }
 }

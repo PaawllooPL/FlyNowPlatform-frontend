@@ -7,12 +7,23 @@
     <mat-icon>home</mat-icon>
     <span>Strona główna</span>
   </button>
-  <button *ngIf="requiredRoles.includes(role)" mat-fab extended matTooltip="Opcje konta" [matMenuTriggerFor]="accountMenu" routerLink="/account">
+  
+  <button *ngIf="authService.hasPermission(Permission.ViewAccountSettings)" mat-fab extended matTooltip="Opcje konta" [matMenuTriggerFor]="accountMenu" routerLink="/account">
     <mat-icon>account_circle</mat-icon>
     <span>Konto</span>
   </button>
   <mat-menu #accountMenu="matMenu">
     <button mat-menu-item>Opcja 1</button>
   </mat-menu>
+
+  <button *ngIf="isAuthenticated()" (click)="onLogout()" mat-fab extended matTooltip="Log out" routerLink="/login">
+    <mat-icon>account_circle</mat-icon>
+    <span>Log out</span>
+  </button>
+
+  <button *ngIf="!isAuthenticated()" mat-fab extended matTooltip="Login" routerLink="/login">
+    <mat-icon>fingerprint</mat-icon>
+    <span>Login</span>
+  </button>
 </mat-toolbar>
 <router-outlet></router-outlet>

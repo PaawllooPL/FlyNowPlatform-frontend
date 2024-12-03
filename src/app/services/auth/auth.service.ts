@@ -35,7 +35,6 @@ export class AuthService {
         console.log("Setting jwt token...");
         localStorage.setItem(this.tokenKey, response.authenticationToken)
         console.log("Setted jwt token");
-        console.log(response.authenticationToken)
       }),
       catchError(error => {
         console.error("register error: " + error);
@@ -90,8 +89,6 @@ export class AuthService {
         return false;
       }
       const parsedToken = jwtDecode(this.getToken() ?? "");
-      console.log(parsedToken)
-      console.log(this.getTokenLeftTime())
       if (parsedToken.exp! < (new Date).getTime()/1000) {
         console.log("przedawniony")
         return false;
@@ -138,6 +135,15 @@ export class AuthService {
     return new HttpHeaders({
       Authorization: token ? `Bearer ${token}` : ''
     });
+  }
+
+  public hasRole(role: Roles) {
+    if (!this.isAuthenticated())
+      return false;
+    let userRoles: string[] = this.getRoles();
+    if(userRoles.includes(role))
+      return true;
+    return false;
   }
 
   public hasPermission(requiredPermission: Permission) {

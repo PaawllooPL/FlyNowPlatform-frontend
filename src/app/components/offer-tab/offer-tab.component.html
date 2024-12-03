@@ -11,7 +11,15 @@
             <div class="offer-detail-info">{{pricePerPerson}} zł</div>
         </div>
     </div>
+    <div class="offer-detail-container-full">
+        <div class="offer-detail-label">adres:</div>
+        <div class="offer-detail-info">{{address}}</div>
+    </div>
+    <div class="offer-detail-container-full">
+        <div class="offer-detail-label">data:</div>
+        <div class="offer-detail-info">{{flightDate | date:'yyyy-mm-dd HH:mm'}}</div>
+    </div>
     <app-list-button-container>
-        <app-list-button class="large-button" [link]="offerDetailLink" icon="arrow_right_alt" text="Sprawdź ofertę"></app-list-button>
+        <app-list-button class="large-button" [link]="buttonLink" icon="arrow_right_alt" [text]="buttonText"></app-list-button>
     </app-list-button-container>
 </div>

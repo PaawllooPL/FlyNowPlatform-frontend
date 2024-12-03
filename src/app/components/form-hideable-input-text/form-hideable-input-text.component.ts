@@ -1,16 +1,18 @@
 import { Component, inject, Input, signal } from '@angular/core';
 import { ControlContainer, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-form-hideable-input-text',
   standalone: true,
-  imports: [ReactiveFormsModule,
-            MatFormFieldModule,
-            MatIcon,
-            MatInputModule
+  imports: [
+    ReactiveFormsModule,
+    MatFormField,
+    MatFormFieldModule,
+    MatIcon,
+    MatInputModule
   ],
   viewProviders: [
     {

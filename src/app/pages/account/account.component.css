@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    width: 100%;
+}
+.account-nav-bar {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    width: 25%;
+    min-height: 50vh;
+    max-height: 60vh;
+}
+.account-nav-bar button {
+    margin: 10px 0px;
+}

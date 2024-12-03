@@ -1,7 +1,7 @@
 <div class="content-wrapper">
-    <div class="filter-container rounded-tab">
+    <!-- <div class="filter-container rounded-tab">
         asonfaosfn asnfaosfn asfnasfnasfn aosnfa nsfasnf ao sfoa nsfoansasf asf nasfo nasof najsf najksf najsf noasn fjaosknfjkasnfk ansfkoankosan fasm 
-    </div>
+    </div> -->
     <app-offer-tab-container>
         <mat-spinner *ngIf="!offersLoaded" id="loading-offers-spinner"></mat-spinner>
         <app-offer-tab *ngFor="let offer of offersPreview" class="offer-tab-small"
@@ -9,7 +9,11 @@
             [title]="offer.title"
             [pricePerPerson]="offer.pricePerPerson"
             [aircraftType]="offer.aircraftType"
-            [imagePath]="offer.imageFilename">
+            [address]="offer.address"
+            [flightDate]="offer.flightDate"
+            [imagePath]="offer.imageFilename"
+            [buttonLink]="generateFlightDetailsLink(offer.flightId)"
+            buttonText="Szczegóły ofery">
         </app-offer-tab>
     </app-offer-tab-container>
 </div>

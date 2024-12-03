@@ -1,0 +1,11 @@
+<div class="rounded-tab">
+    <h2 style="text-align: center;">Stwórz firme</h2>
+    <form [formGroup]="createCompanyForm" (ngSubmit)="onCreateFormSubmit()" id="add-offer-form">
+        <app-form-input-text inputFormControlName="createCompanyName" inputLabel="Nazwa" inputPlaceholder="Polskie Przeloty"></app-form-input-text>
+        <app-form-input-text inputFormControlName="createCompanyAddress" inputLabel="Adres firmy" inputPlaceholder="Warszawa, Główna 4"></app-form-input-text>
+        <app-form-input-number inputFormControlName="createCompanyTin" inputLabel="NIP" inputPlaceholder="0000000000"></app-form-input-number>
+        <div class="submit-button-container">
+            <app-list-submit-button text="Stwórz" icon="add_to_photos"></app-list-submit-button>
+        </div>
+    </form>
+</div>

@@ -10,6 +10,12 @@ import { RolePermissions } from './models/permissions/role-permissions';
 import { PermissionAuthGuard } from './services/authGuard/permissionAuthGuard';
 import { LoginAuthGuard } from './services/authGuard/loginAuthGuard';
 import { ErrorComponent } from './pages/error/error.component';
+import { AccountComponent } from './pages/account/account.component';
+import { Roles } from './models/roles.enum';
+import { CreateCompanyComponent } from './pages/create-company/create-company.component';
+import { UserOffersComponent } from './pages/user-offers/user-offers.component';
+import { OrganizerOffersComponent } from './pages/organizer-offers/organizer-offers.component';
+import { OrganizerOfferDetailsComponent } from './pages/organizer-offers-details/organizer-offer-details.component';
 
 export const routes: Routes = [
     {
@@ -40,13 +46,52 @@ export const routes: Routes = [
         pathMatch: 'full',
         canActivate: [PermissionAuthGuard],
         data: {
-            requiredPermission: Permission.CreateOffer
+            requiredPermission: Permission.CreateOffer,
         }
     },
     {
         path: 'offers/:id',
         component: OfferDetailsComponent,
         pathMatch: 'full',
+    },
+    {
+        path: 'account',
+        component: AccountComponent,
+        // pathMatch: 'full',
+        canActivate: [PermissionAuthGuard],
+        data: {
+            requiredPermission: Permission.ViewAccountSettings,
+        },
+        children: [
+            {
+                path: 'create-company',
+                component: CreateCompanyComponent,
+                canActivate: [PermissionAuthGuard],
+                data: {
+                    requiredRole: Roles.user,
+                },
+            },
+            {
+                path: 'create-offer',
+                component: CreateOfferComponent,
+                canActivate: [PermissionAuthGuard],
+                data: {
+                    requiredRole: Roles.organizer,
+                },
+            },
+            {
+                path: 'organizer-offers',
+                component: OrganizerOffersComponent,
+            },
+            {
+                path: 'organizer-offers/:id',
+                component: OrganizerOfferDetailsComponent,
+            },
+            {
+                path: 'archive-offers',
+                component: UserOffersComponent,
+            },
+        ]
     },
     {
         path: 'error',

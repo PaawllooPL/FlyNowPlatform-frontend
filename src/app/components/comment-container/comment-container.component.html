@@ -1,4 +1,4 @@
-<div class="add-comment-container">
+<div *ngIf="canComment" class="add-comment-container">
     <form [formGroup]="commentForm" (ngSubmit)="onCommentSubmit()">
         <textarea id="comment-textarea" rows="4" formControlName="content"></textarea>
         <div class="comment-control-panel">

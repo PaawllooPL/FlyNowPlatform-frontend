@@ -8,13 +8,13 @@
     <span>Strona główna</span>
   </button>
   
-  <button *ngIf="authService.hasPermission(Permission.ViewAccountSettings)" mat-fab extended matTooltip="Opcje konta" [matMenuTriggerFor]="accountMenu" routerLink="/account">
+  <button *ngIf="authService.hasPermission(Permission.ViewAccountSettings)" mat-fab extended matTooltip="Opcje konta" routerLink="/account">
     <mat-icon>account_circle</mat-icon>
     <span>Konto</span>
   </button>
-  <mat-menu #accountMenu="matMenu">
+  <!-- <mat-menu #accountMenu="matMenu"> to do atrybutow buttona: [matMenuTriggerFor]="accountMenu"
     <button mat-menu-item>Opcja 1</button>
-  </mat-menu>
+  </mat-menu> -->
 
   <button *ngIf="isAuthenticated()" (click)="onLogout()" mat-fab extended matTooltip="Log out" routerLink="/login">
     <mat-icon>account_circle</mat-icon>

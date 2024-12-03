@@ -1,0 +1,95 @@
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.offer-image {
+    margin: 20px 20px;
+    border-radius:20px;
+    width: 33vw;
+    height: 33vw;
+}
+.offer-main-info {
+    margin: 20px 20px;
+    width: 33vw;
+}
+#title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+}
+.offer-side-info-container {
+    display: flex;
+    flex-direction: column;
+}
+.offer-side-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.offer-detail-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.offer-detail-inner-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 12vw;
+    border-radius: 20px;
+    margin: 10px 0px;
+    padding: 10px;
+    background-color: #e0e0ff;
+    box-shadow: 0px 0px 10px -4px black ;
+}
+.offer-detail-label {
+    text-align: center;
+    font-size: 1.1rem;
+}
+.offer-detail-info {
+    flex: 1;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    max-width: 12vw;
+}
+#buy-offer-button {
+    margin: 0 auto;
+}   
+#offer-description-label, #offer-comments-label {
+    display: block;
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+#offer-address-label{
+    font-weight: 600;
+}
+.offer-description {
+    min-height: 60vh;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin: 0px 20px;
+    width: 33vw;
+}
+.offer-comments {
+    width: 33vw;
+    margin: 0px 20px;
+    padding: 10px;
+    overflow-y: scroll;
+    scrollbar-face-color: blue;
+}
+.client-info {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 10vh;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px -4px var(--same-as-angular-materials-blue-theme-color) !important;
+    background-color: whitesmoke;
+    margin: 10px 0px;
+}

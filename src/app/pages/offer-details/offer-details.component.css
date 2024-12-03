@@ -66,7 +66,10 @@
     margin-bottom: 20px;
     margin-top: 10px;
 }
-.offer-description{
+#offer-address-label{
+    font-weight: 600;
+}
+.offer-description {
     min-height: 60vh;
     font-size: 1.2rem;
     line-height: 2rem;

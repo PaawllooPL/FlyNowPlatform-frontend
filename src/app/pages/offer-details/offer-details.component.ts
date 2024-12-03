@@ -6,7 +6,7 @@ import { ListButtonContainerComponent } from '../../components/list-button-conta
 import { ListButtonComponent } from '../../components/list-button/list-button.component';
 import { CommentComponent } from '../../components/comment/comment.component';
 import { CommentContainerComponent } from '../../components/comment-container/comment-container.component';
-import { NgFor, NgIf } from '@angular/common';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { environment } from '../../../environments/environment.development';
 import { AuthService } from '../../services/auth/auth.service';
 import { Permission } from '../../models/permissions/permissions.enum';
@@ -14,7 +14,8 @@ import { Permission } from '../../models/permissions/permissions.enum';
   selector: 'app-offer-details',
   standalone: true,
   imports: [ListButtonContainerComponent, ListButtonComponent, CommentComponent, CommentContainerComponent, NgFor
-    ,NgIf
+    ,NgIf,
+    CommonModule,
   ],
   templateUrl: './offer-details.component.html',
   styleUrl: './offer-details.component.css'
@@ -54,6 +55,18 @@ export class OfferDetailsComponent {
           this.router.navigate(['/error']);
         }
       });
+    });
+  }
+
+  onBuy() {
+    this.offerService.buyOffer(this.offerDetails?.flightId!).subscribe({
+      next: (response) => {
+        console.log(response);
+        window.location.reload();
+      },
+      error: (error) => {
+        console.error(error);
+      }
     });
   }
 }

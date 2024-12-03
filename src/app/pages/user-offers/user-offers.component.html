@@ -1,0 +1,16 @@
+<div class="content-wrapper">
+    <app-offer-tab-container>
+        <mat-spinner *ngIf="!offersLoaded" id="loading-offers-spinner"></mat-spinner>
+        <app-offer-tab *ngFor="let offer of offersPreview" class="offer-tab-small"
+            [flightId]="offer.flightId"
+            [title]="offer.title"
+            [pricePerPerson]="offer.pricePerPerson"
+            [aircraftType]="offer.aircraftType"
+            [address]="offer.address"
+            [flightDate]="offer.flightDate"
+            [imagePath]="offer.imageFilename"
+            buttonText="Szczegóły oferty"
+            [buttonLink]="generateDetailsUrl(offer.flightId)">
+        </app-offer-tab>
+    </app-offer-tab-container>
+</div>

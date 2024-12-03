@@ -28,16 +28,19 @@
                 </div>
                 <div class="offer-detail-container">
                     <div class="offer-detail-inner-container">
-
                         <div *ngIf="true" class="offer-detail-label">średnia ocena organizatora:</div>
                         <div class="offer-detail-info">{{offerDetails?.eventOrganizerRating ?? "brak ocen"}}</div>
+                    </div>
+                    <div class="offer-detail-inner-container">
+                        <div class="offer-detail-label">data:</div>
+                        <div class="offer-detail-info">{{offerDetails?.flightDate | date:'yyyy-MM-dd HH:mm'}}</div>
                     </div>
                 </div>
             </div>
             <app-list-button-container>
                 <!-- TODO: font size -->
                 <app-list-button *ngIf="this.isLoggedIn" [disabled]="!this.offerDetails?.canBuy" id="buy-offer-button" class="small-button" [link]="" icon="monetization_on"
-                    text="Kup teraz"></app-list-button>
+                    text="Kup teraz" (click)="onBuy()"></app-list-button>
                     <!-- <h1>{{this.offerDetails!.canBuy}}</h1> -->
                 <app-list-button *ngIf="!this.isLoggedIn" id="buy-offer-button" class="small-button" link="/login" icon="account_circle"
                     text="Zaloguj, aby kupić"></app-list-button>
@@ -49,11 +52,14 @@
 <div class="content-wrapper" style="align-items: flex-start;">
     <div class="offer-description rounded-tab" id="description-container">
         <span id="offer-description-label">Opis</span>
-        {{offerDetails?.description}}
+        <span id="offer-address-label">Miejsce wydarzenia: </span><span>{{offerDetails?.address}}</span>
+        <div style="margin-top: 20px;">
+            {{offerDetails?.description}}
+        </div>
     </div>
     <div class="offer-comments rounded-tab" id="comments-container">
         <span id="offer-comments-label">Opinie o organizatorze</span>
-        <app-comment-container>
+        <app-comment-container [canComment]="this.offerDetails!.canComment">
             <app-comment *ngFor="let comment of offerDetails?.comments"
                 [userId]="comment.userId"
                 [username]="comment.username"

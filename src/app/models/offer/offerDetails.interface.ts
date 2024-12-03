@@ -14,4 +14,6 @@ export interface OfferDetails {
     comments: OfferComment[],
     canBuy: boolean,
     canComment: boolean,
+    address: string,
+    flightDate: Date,
 }

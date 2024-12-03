@@ -41,4 +41,7 @@ export class HomeComponent {
     ngOnInit() {
         this.fetchAllOffers();
     }
+    generateFlightDetailsLink(flightId: number) {
+        return environment.appUrl.generateOfferDetailsUrl(flightId);
+    }
 }

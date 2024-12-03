@@ -12,16 +12,19 @@ export class PermissionAuthGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot): boolean {
     console.log("can activate function called");
     const routeData = route.data;
-    if(!routeData['requiredPermission']) {
-      return true;
+    if(routeData['requiredPermission']) {
+      if (!this.authService.hasPermission(routeData['requiredPermission'])) {
+        this.router.navigate(['/error'], {
+          queryParams: {message: "Missing required permission."}
+        });
+        return false;
+      }
     }
-    
-    if (!this.authService.hasPermission(routeData['requiredPermission'])) {
-      this.router.navigate(['/error'], {
-        queryParams: {message: "Missing required permission."}
-      });
-      return false;
+    if(routeData['requiredRole']) {
+      console.log("required role")
+      return this.authService.hasRole(routeData['requiredRole'])
     }
+
     return true;
   }
 }

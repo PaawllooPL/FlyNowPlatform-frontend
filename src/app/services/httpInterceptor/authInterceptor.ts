@@ -17,6 +17,7 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return from(this.handle(req, next)).pipe(
       catchError((error: HttpErrorResponse) => {
+        console.error(error)
         if (error.status === 0) {
           console.error("Server is unreachable (ERR_CONNECTION_REFUSED)");
           this.router.navigate(['/error']);
@@ -34,7 +35,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     // if token exists add authorization header
     if (token) {
-      if (this.authService.getTokenLeftTime()! >= (64 * 14)) {
+      if (this.authService.getTokenLeftTime()! >= (60 * 5)) {
         const clonedRequest = req.clone({
           setHeaders: {
             Authorization: `Bearer ${this.authService.getToken()}`

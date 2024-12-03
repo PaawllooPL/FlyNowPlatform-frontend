@@ -4,11 +4,13 @@ import { ListButtonComponent } from '../list-button/list-button.component';
 import { MatFabButton } from '@angular/material/button';
 import { ListButtonContainerComponent } from '../list-button-container/list-button-container.component';
 import { environment } from '../../../environments/environment.development';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-offer-tab',
   standalone: true,
-  imports: [MatIcon, ListButtonComponent, MatFabButton, ListButtonContainerComponent, ListButtonComponent],
+  imports: [MatIcon, ListButtonComponent, MatFabButton, ListButtonContainerComponent, ListButtonComponent, CommonModule],
+  providers: [DatePipe],
   templateUrl: './offer-tab.component.html',
   styleUrl: './offer-tab.component.css'
 })
@@ -19,9 +21,8 @@ export class OfferTabComponent {
   @Input() aircraftType?: string;
   @Input() imagePath?: string;
   @Input() flightId!: number;
-  offerDetailLink?: string; 
-  
-  ngOnInit() {
-    this.offerDetailLink = environment.appUrl.offersList + '/' + this.flightId.toString();
-  }
+  @Input() address?: string;
+  @Input() flightDate?: Date;
+  @Input() buttonText?: string;
+  @Input() buttonLink?: string;
 }

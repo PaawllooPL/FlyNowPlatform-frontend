@@ -1,0 +1,60 @@
+<div class="content-wrapper">
+        <img class="offer-image rounded-tab" [src]="imageUrl">
+    <div class="offer-main-info rounded-tab">
+        <div class="offer-title">
+            <h1 id="title">{{offerDetails?.title}}</h1>
+        </div>
+        <div class="offer-side-info-container">
+            <div class="offer-side-info">
+                <div class="offer-detail-container">
+                    <div class="offer-detail-inner-container">
+                        <div class="offer-detail-label">rodzaj statku powietrznego:</div>
+                        <div class="offer-detail-info">{{offerDetails?.aircraftType}}</div>
+                    </div>
+                    <div class="offer-detail-inner-container">
+                        <div class="offer-detail-label">cena za osobę:</div>
+                        <div class="offer-detail-info">{{offerDetails?.pricePerPerson}} zł</div>
+                    </div>
+                </div>
+                <div class="offer-detail-container">
+                    <div class="offer-detail-inner-container">
+                        <div class="offer-detail-label">liczba dostęnych miejsc:</div>
+                        <div class="offer-detail-info">{{offerDetails?.remainingSeats}}</div>
+                    </div>
+                    <div class="offer-detail-inner-container">
+                        <div class="offer-detail-label">organizator:</div>
+                        <div class="offer-detail-info">{{offerDetails?.eventOrganizerName}}</div>
+                    </div>
+                </div>
+                <div class="offer-detail-container">
+                    <div class="offer-detail-inner-container">
+                        <div class="offer-detail-label">średnia ocena organizatora:</div>
+                        <div class="offer-detail-info">{{offerDetails?.eventOrganizerRating ?? "brak ocen"}}</div>
+                    </div>
+                    <div class="offer-detail-inner-container">
+                        <div class="offer-detail-label">data:</div>
+                        <div class="offer-detail-info">{{offerDetails?.flightDate | date:'yyyy-MM-dd HH:mm'}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-wrapper" style="align-items: flex-start;">
+    <div class="offer-description rounded-tab" id="description-container">
+        <span id="offer-description-label">Opis</span>
+        <span id="offer-address-label">Miejsce wydarzenia: </span><span>{{offerDetails?.address}}</span>
+        <div style="margin-top: 20px;">
+            {{offerDetails?.description}}
+        </div>
+    </div>
+    <div class="offer-comments rounded-tab" id="comments-container">
+        <span id="offer-comments-label">Lista klientów</span>
+        <ul style="list-style: none;">
+            <li class="client-info" *ngFor="let client of offerDetails?.clients">
+                <p>Username: {{client.username}}</p> 
+                <p>Email: {{client.email}}</p>
+            </li>
+        </ul>
+    </div>
+</div>

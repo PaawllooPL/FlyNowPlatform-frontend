@@ -10,6 +10,7 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { environment } from '../../../environments/environment.development';
 import { AuthService } from '../../services/auth/auth.service';
 import { Permission } from '../../models/permissions/permissions.enum';
+import { Voivodeships } from '../../models/voivodeships.enum';
 @Component({
   selector: 'app-offer-details',
   standalone: true,
@@ -47,6 +48,7 @@ export class OfferDetailsComponent {
       this.offerService.getOfferDetailsById(offerId).subscribe({
         next: (offer) => {
           this.offerDetails = offer;
+          this.offerDetails.voivodeship = Voivodeships[offer.voivodeship as keyof typeof Voivodeships];
           this.isOfferLoaded = true;
           this.imageUrl = environment.apiUrl.offerImageUrl(offer.imageFilename);
         },

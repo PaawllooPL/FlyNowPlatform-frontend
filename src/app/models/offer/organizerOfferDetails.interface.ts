@@ -12,6 +12,7 @@ export interface OrganizerOfferDetails {
     eventOrganizerName: string,
     eventOrganizerRating?: number,
     address: string,
+    voivodeship: string,
     flightDate: Date,
     clients: OfferClient[]  
 }

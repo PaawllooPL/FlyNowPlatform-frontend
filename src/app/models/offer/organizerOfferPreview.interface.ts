@@ -5,6 +5,7 @@ export interface OrganizerOfferPreview {
     clientCount: number;
     totalSeats: number;
     address: string;
+    voivodeship: string;
     flightDate: Date;
     imageFilename: string;
 }

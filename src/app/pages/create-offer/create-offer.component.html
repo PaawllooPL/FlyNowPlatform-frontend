@@ -25,6 +25,12 @@
             <div class="three-per-row-item">
                 <app-form-input-number inputPlaceholder="45" inputFormControlName="createOfferDuration" inputLabel="Długość lotu"></app-form-input-number>
             </div>
+            <div class="three-per-row-item">
+                <label for="select-type-id"><span id="select-type-label">Województwo</span></label>
+                <select id="select-type-id" class="select-type" formControlName="voivodeshipOption">
+                    <option *ngFor="let voivodeship of voivodeships" [value]="voivodeship[0]">{{voivodeship[1]}}</option>
+                </select>
+            </div>
             <div class="three-per-row-item" style="padding-top: 16px;">
                 <mat-form-field>
                     <input formControlName="flightDateTime" matInput type="datetime-local" placeholder="chuj">

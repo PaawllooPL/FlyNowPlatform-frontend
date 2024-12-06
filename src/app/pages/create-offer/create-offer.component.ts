@@ -13,6 +13,8 @@ import { MatNativeDateModule, NativeDateAdapter, provideNativeDateAdapter } from
 import { MatInputModule } from '@angular/material/input';
 import { OfferService } from '../../services/offer/offer.service';
 import { Router } from '@angular/router';
+import{MatSelectModule} from '@Angular/material/select'
+import { Voivodeships } from '../../models/voivodeships.enum';
 
 @Component({
   selector: 'app-create-offer',
@@ -32,7 +34,7 @@ import { Router } from '@angular/router';
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    MatSelectModule
   ],
   providers: [
     provideNativeDateAdapter(),
@@ -42,12 +44,14 @@ import { Router } from '@angular/router';
 })
 export class CreateOfferComponent {
   aircraftTypes: string[] = ['awionetka', 'szybowiec', 'helikopter', 'balon']
+  voivodeships = Object.entries(Voivodeships);
   createOfferForm: FormGroup;
   selectedFile: File | null = null;
 
   constructor(private fb: FormBuilder, private offerService: OfferService, private router: Router) {
     this.createOfferForm = this.fb.group({
       aircraftTypeOption: [],
+      voivodeshipOption: [],
       createOfferDescription: [],
       createOfferImage: [],
       flightDateTime: [],
@@ -70,6 +74,7 @@ export class CreateOfferComponent {
     form.append('duration', this.createOfferForm.get('createOfferDuration')?.value);
     form.append('aircraftType', this.createOfferForm.get('aircraftTypeOption')?.value);
     form.append('address', this.createOfferForm.get('flightAddress')?.value);
+    form.append('voivodeship', this.createOfferForm.get('voivodeshipOption')?.value);
     form.append('image', this.selectedFile, this.selectedFile!.name);
     
     

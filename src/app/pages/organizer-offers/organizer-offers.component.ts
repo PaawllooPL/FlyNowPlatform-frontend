@@ -7,6 +7,7 @@ import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { OrganizerOfferPreview } from '../../models/offer/organizerOfferPreview.interface';
 import { OfferService } from '../../services/offer/offer.service';
 import { environment } from '../../../environments/environment.development';
+import { Voivodeships } from '../../models/voivodeships.enum';
 
 @Component({
   selector: 'app-organizer-offers',
@@ -32,6 +33,7 @@ export class OrganizerOffersComponent {
         next: (data) => {
             data.forEach(offer => {
                 offer.imageFilename = environment.apiUrl.offerImageUrl(offer.imageFilename);
+                offer.voivodeship = Voivodeships[offer.voivodeship as keyof typeof Voivodeships]
             })
             console.log("wczytano")
             this.organizerOffersPreview = data;

@@ -1,11 +1,16 @@
 .content-wrapper {
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
 }
 .filter-container {
-    flex: 1;
+    /* flex: 1; */
+    width: 15vw;
     display: flex;
     flex-direction: column;
+}
+.content {
+    flex: 1;
 }
 .offer-tab-big {
     width: 100%;

@@ -9,7 +9,7 @@
             <mat-icon>home</mat-icon>
             <span>Stwórz ofertę</span>
         </button>
-        <button mat-fab extended matTooltip="Twoje zorganizowane przeloty." routerLink="organizer-offers">
+        <button *ngIf="this.authService.hasRole(Roles.organizer)" mat-fab extended matTooltip="Twoje zorganizowane przeloty." routerLink="organizer-offers">
             <mat-icon>home</mat-icon>
             <span>Zorganizowane przeloty</span>
         </button>

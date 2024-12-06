@@ -2,6 +2,7 @@ export const environment = {
     apiUrl: {
         baseUrl: 'http://localhost:8080/api/v1',
         allOffers: '/offers',
+        filteredOffers: '/offers/filtered',
         offerDetails: '/details',
         register: '/authentication/register',
         login: '/authentication/login',
@@ -17,6 +18,7 @@ export const environment = {
         get loginUrl() {return `${this.baseUrl}${this.login}`;},
         get refreshUrl() {return `${this.baseUrl}${this.refresh}`;},
         get allOffersUrl() {return `${this.baseUrl}${this.allOffers}`;},
+        get filteredOffersUrl() {return `${this.baseUrl}${this.filteredOffers}`;},
         get createOfferUrl(){return `${this.baseUrl}${this.createOffer}`;},
         get createCompanyUrl(){return `${this.baseUrl}${this.createCompany}`;},
         get userOffersUrl(){return `${this.baseUrl}${this.allOffers}${this.userOffers}`;},

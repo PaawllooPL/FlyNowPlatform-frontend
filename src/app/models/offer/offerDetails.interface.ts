@@ -15,5 +15,6 @@ export interface OfferDetails {
     canBuy: boolean,
     canComment: boolean,
     address: string,
+    voivodeship: string,
     flightDate: Date,
 }

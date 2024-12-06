@@ -1,19 +1,33 @@
 <div class="content-wrapper">
-    <!-- <div class="filter-container rounded-tab">
-        asonfaosfn asnfaosfn asfnasfnasfn aosnfa nsfasnf ao sfoa nsfoansasf asf nasfo nasof najsf najksf najsf noasn fjaosknfjkasnfk ansfkoankosan fasm 
-    </div> -->
-    <app-offer-tab-container>
-        <mat-spinner *ngIf="!offersLoaded" id="loading-offers-spinner"></mat-spinner>
-        <app-offer-tab *ngFor="let offer of offersPreview" class="offer-tab-small"
+    <div class="filter-container rounded-tab">
+        <h3>Filtruj po województwach</h3>
+        <form [formGroup]="filterForm" (ngSubmit)="onFilterFormSubmit()">
+            <div *ngFor="let voivodeship of voivodeships" style="margin-top: 4px;">
+              <label>
+                <input type="checkbox" [value]="voivodeship[0]" (change)="handleVoivodeshipCheckboxCheck($event)">
+                {{ voivodeship[1] }}
+              </label>
+            </div>
+            <app-list-button-container style="margin-top: 20px;">
+                <app-list-submit-button class="large-button" text="Szukaj" icon="search"></app-list-submit-button>
+            </app-list-button-container>
+        </form>
+    </div>
+    <div class="content">
+        <app-offer-tab-container>
+            <mat-spinner *ngIf="!offersLoaded" id="loading-offers-spinner"></mat-spinner>
+            <app-offer-tab *ngFor="let offer of offersPreview" class="offer-tab-small"
             [flightId]="offer.flightId"
             [title]="offer.title"
             [pricePerPerson]="offer.pricePerPerson"
             [aircraftType]="offer.aircraftType"
             [address]="offer.address"
+            [voivodeship]="offer.voivodeship"
             [flightDate]="offer.flightDate"
             [imagePath]="offer.imageFilename"
             [buttonLink]="generateFlightDetailsLink(offer.flightId)"
             buttonText="Szczegóły ofery">
-        </app-offer-tab>
-    </app-offer-tab-container>
+            </app-offer-tab>
+        </app-offer-tab-container>
+    </div>
 </div>

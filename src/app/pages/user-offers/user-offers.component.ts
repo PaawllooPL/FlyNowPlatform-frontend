@@ -7,6 +7,7 @@ import { MatIcon } from '@angular/material/icon';
 import { OfferTabComponent } from '../../components/offer-tab/offer-tab.component';
 import { OfferTabContainerComponent } from '../../components/offer-tab-container/offer-tab-container.component';
 import { CommonModule } from '@angular/common';
+import { Voivodeships } from '../../models/voivodeships.enum';
 
 @Component({
   selector: 'app-user-offers',
@@ -32,6 +33,7 @@ export class UserOffersComponent {
         next: (data) => {
             data.forEach(offer => {
                 offer.imageFilename = environment.apiUrl.offerImageUrl(offer.imageFilename);
+                offer.voivodeship = Voivodeships[offer.voivodeship as keyof typeof Voivodeships]
             })
             console.log("wczytano")
             this.offersPreview = data;

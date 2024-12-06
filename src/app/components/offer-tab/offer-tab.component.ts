@@ -22,6 +22,7 @@ export class OfferTabComponent {
   @Input() imagePath?: string;
   @Input() flightId!: number;
   @Input() address?: string;
+  @Input() voivodeship?: string;
   @Input() flightDate?: Date;
   @Input() buttonText?: string;
   @Input() buttonLink?: string;

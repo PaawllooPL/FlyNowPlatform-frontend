@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OfferService } from '../../services/offer/offer.service';
 import { AuthService } from '../../services/auth/auth.service';
 import { environment } from '../../../environments/environment.development';
+import { Voivodeships } from '../../models/voivodeships.enum';
 
 @Component({
   selector: 'app-organizer-offer-details',
@@ -35,8 +36,10 @@ export class OrganizerOfferDetailsComponent {
       this.offerService.getOrganizerOfferDetailsById(offerId).subscribe({
         next: (offer) => {
           this.offerDetails = offer;
+          this.offerDetails.voivodeship = Voivodeships[offer.voivodeship as keyof typeof Voivodeships];
           this.isOfferLoaded = true;
           this.imageUrl = environment.apiUrl.offerImageUrl(offer.imageFilename);
+          
         },
         error: (error) => {
           console.error(error);

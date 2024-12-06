@@ -4,6 +4,7 @@ export interface OfferPreview {
     pricePerPerson: number;
     aircraftType: string;
     address: string;
+    voivodeship: string;
     flightDate: Date;
     imageFilename: string;
 }

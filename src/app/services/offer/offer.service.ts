@@ -230,6 +230,17 @@ export class OfferService {
       }
     });
   }
+  getFilteredOffers(filters: string[]): Observable<OfferPreview[]> {
+    let params = filters.length != 0 ? filters : '';
+    return this.http.get<OfferPreview[]>(environment.apiUrl.filteredOffersUrl, {
+      headers: {
+        'Accept' : 'application/json',
+      },
+      params: {
+        voivodeships: params,
+      }
+    });
+  }
   getOfferDetailsById(offerId: number): Observable<OfferDetails> {
     return this.http.get<OfferDetails>(environment.apiUrl.offerDetailsUrl(offerId))
     // call api

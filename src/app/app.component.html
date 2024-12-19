@@ -17,13 +17,13 @@
   </mat-menu> -->
 
   <button *ngIf="isAuthenticated()" (click)="onLogout()" mat-fab extended matTooltip="Log out" routerLink="/login">
-    <mat-icon>account_circle</mat-icon>
-    <span>Log out</span>
+    <mat-icon>logout</mat-icon>
+    <span>Wyloguj</span>
   </button>
 
   <button *ngIf="!isAuthenticated()" mat-fab extended matTooltip="Login" routerLink="/login">
     <mat-icon>fingerprint</mat-icon>
-    <span>Login</span>
+    <span>Zaloguj</span>
   </button>
 </mat-toolbar>
 <router-outlet></router-outlet>

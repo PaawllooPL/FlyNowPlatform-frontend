@@ -85,6 +85,7 @@ export class HomeComponent {
             next: (data) => {
                 data.forEach(offer => {
                     offer.imageFilename = environment.apiUrl.offerImageUrl(offer.imageFilename);
+                    offer.voivodeship = offer.voivodeship = Voivodeships[offer.voivodeship as keyof typeof Voivodeships];
                 })
                 console.log("wczytano")
                 this.offersPreview = data;

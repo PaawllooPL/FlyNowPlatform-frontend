@@ -59,7 +59,7 @@
     </div>
     <div class="offer-comments rounded-tab" id="comments-container">
         <span id="offer-comments-label">Opinie o organizatorze</span>
-        <app-comment-container [canComment]="this.offerDetails!.canComment">
+        <app-comment-container [canComment]="this.offerDetails!.canComment" [flightId]="this.offerDetails?.flightId">
             <app-comment *ngFor="let comment of offerDetails?.comments"
                 [userId]="comment.userId"
                 [username]="comment.username"

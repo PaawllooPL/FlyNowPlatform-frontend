@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment.development';
 import { OrganizerOfferPreview } from '../../models/offer/organizerOfferPreview.interface';
 import { OrganizerOfferDetails } from '../../models/offer/organizerOfferDetails.interface';
+import { AddComment } from '../../models/comment/addComment.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -267,7 +268,7 @@ export class OfferService {
     return this.http.get<OfferPreview[]>(environment.apiUrl.userOffersUrl, {
       headers: {
         'Accept' : 'application/json',
-      }
+      },
     });
   }
   getOrganizerOffers(): Observable<OrganizerOfferPreview[]> {
@@ -276,6 +277,11 @@ export class OfferService {
         'Accept' : 'application/json',
       }
     });
+  }
+  addComment(newComment: AddComment): Observable<string> {
+    return this.http.post(environment.apiUrl.addCommentUrl, newComment, {
+      responseType: "text"
+    })
   }
 
 }

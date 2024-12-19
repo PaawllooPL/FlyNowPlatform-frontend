@@ -2,19 +2,19 @@
 <div class="container">
     <div class="account-nav-bar rounded-tab">
         <button *ngIf="!this.authService.hasRole(Roles.organizer)" mat-fab extended matTooltip="Zostań organizatorem. Nie tracisz żadnych funkcjonalności. " routerLink="create-company">
-            <mat-icon>home</mat-icon>
+            <mat-icon>person_add</mat-icon>
             <span>Zostań organizatorem</span>
         </button>
         <button *ngIf="this.authService.hasRole(Roles.organizer)" mat-fab extended matTooltip="Stwórz ofertę przelotu." routerLink="create-offer">
-            <mat-icon>home</mat-icon>
+            <mat-icon>fiber_new</mat-icon>
             <span>Stwórz ofertę</span>
         </button>
         <button *ngIf="this.authService.hasRole(Roles.organizer)" mat-fab extended matTooltip="Twoje zorganizowane przeloty." routerLink="organizer-offers">
-            <mat-icon>home</mat-icon>
+            <mat-icon>flight</mat-icon>
             <span>Zorganizowane przeloty</span>
         </button>
         <button mat-fab extended matTooltip="Przeloty, w których wzięto udział." routerLink="archive-offers">
-            <mat-icon>home</mat-icon>
+            <mat-icon>attach_money</mat-icon>
             <span>Kupione przeloty</span>
         </button>
     </div>

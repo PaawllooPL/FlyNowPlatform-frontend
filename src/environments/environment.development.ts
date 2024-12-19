@@ -1,6 +1,7 @@
 export const environment = {
     apiUrl: {
         baseUrl: 'http://localhost:8080/api/v1',
+        // baseUrl: 'http://192.168.1.20:8080/api/v1',
         allOffers: '/offers',
         filteredOffers: '/offers/filtered',
         offerDetails: '/details',
@@ -13,6 +14,7 @@ export const environment = {
         createCompany: '/company/create',
         userOffers: '/user-offers',
         organizerOffers: '/organizer-offers',
+        addComment: '/comments/add',
 
         get registerUrl() {return `${this.baseUrl}${this.register}`;},
         get loginUrl() {return `${this.baseUrl}${this.login}`;},
@@ -23,6 +25,8 @@ export const environment = {
         get createCompanyUrl(){return `${this.baseUrl}${this.createCompany}`;},
         get userOffersUrl(){return `${this.baseUrl}${this.allOffers}${this.userOffers}`;},
         get organizerOffersUrl(){return `${this.baseUrl}${this.allOffers}${this.organizerOffers}`;},
+        get addCommentUrl(){return `${this.baseUrl}${this.addComment}`;},
+        
         offerDetailsUrl(flightId: number) {return `${this.baseUrl}${this.allOffers}/${flightId}${this.offerDetails}`;},
         organizerOfferDetailsUrl(flightId: number) {return `${this.baseUrl}${this.allOffers}${this.organizerOffers}/${flightId}${this.offerDetails}`;},
         offerImageUrl(imageFilename: string){return `${this.baseUrl}${this.image}/${imageFilename}`;},

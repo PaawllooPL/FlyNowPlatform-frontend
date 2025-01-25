@@ -17,7 +17,7 @@ import { UserOffersComponent } from './pages/user-offers/user-offers.component';
 import { OrganizerOffersComponent } from './pages/organizer-offers/organizer-offers.component';
 import { OrganizerOfferDetailsComponent } from './pages/organizer-offers-details/organizer-offer-details.component';
 
-export const routes: Routes = [
+    export const routes: Routes = [
     {
         path: '',
         redirectTo: 'login',
@@ -57,7 +57,6 @@ export const routes: Routes = [
     {
         path: 'account',
         component: AccountComponent,
-        // pathMatch: 'full',
         canActivate: [PermissionAuthGuard],
         data: {
             requiredPermission: Permission.ViewAccountSettings,

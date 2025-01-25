@@ -39,7 +39,7 @@ export class AppComponent {
   title = 'FlyNow';
   role: string = Roles.user;
   Roles = Roles;
-  requiredRoles: Array<string> = [Roles.admin, Roles.organizer, Roles.user];
+  requiredRoles: Array<string> = [Roles.organizer, Roles.user];
 
   isAuthenticated() {
     return this.authService.isAuthenticated();

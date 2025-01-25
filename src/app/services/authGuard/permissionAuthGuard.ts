@@ -10,7 +10,6 @@ export class PermissionAuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
-    console.log("can activate function called");
     const routeData = route.data;
     if(routeData['requiredPermission']) {
       if (!this.authService.hasPermission(routeData['requiredPermission'])) {
@@ -21,7 +20,6 @@ export class PermissionAuthGuard implements CanActivate {
       }
     }
     if(routeData['requiredRole']) {
-      console.log("required role")
       return this.authService.hasRole(routeData['requiredRole'])
     }
 

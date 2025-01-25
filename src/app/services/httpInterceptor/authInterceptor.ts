@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-
   private isRefreshing = false;
 
   constructor(private authService: AuthService, private http: HttpClient, private router: Router) { }
@@ -17,13 +16,13 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return from(this.handle(req, next)).pipe(
       catchError((error: HttpErrorResponse) => {
-        console.error(error)
         if (error.status === 0) {
           console.error("Server is unreachable (ERR_CONNECTION_REFUSED)");
           this.router.navigate(['/error']);
           alert('Connection error: Unable to reach the server')
+          return throwError(() => new Error("Server is unreachable (ERR_CONNECTION_REFUSED)"));
         }
-        return throwError(() => new Error("Server is unreachable (ERR_CONNECTION_REFUSED)"));
+        return throwError(() => error);
       })
     );
   }
@@ -57,13 +56,11 @@ export class AuthInterceptor implements HttpInterceptor {
                 }));
 
               if (refreshTokenResponse.status != 200) {
-                console.log("refreshing token")
                 this.isRefreshing = false;
                 return lastValueFrom(next.handle(req));
               }
 
-              // if status 200
-              console.log("authInterceptor.ts refreshed token")
+              // if status 200 = if resfreshed
               this.authService.setToken(refreshTokenResponse.body!.authenticationToken);
               this.authService.setRefreshToken(refreshTokenResponse.body!.refreshToken);
               const clonedRequest = req.clone({

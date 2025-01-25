@@ -52,8 +52,8 @@
         <span id="offer-comments-label">Lista klientów</span>
         <ul style="list-style: none;">
             <li class="client-info" *ngFor="let client of offerDetails?.clients">
-                <p>Username: {{client.username}}</p> 
-                <p>Email: {{client.email}}</p>
+                <p><span style="font-weight: 500;">Nazwa użytkownika: </span>{{client.username}}</p> 
+                <p><span style="font-weight: 500;">Email: </span>{{client.email}}</p>
             </li>
         </ul>
     </div>

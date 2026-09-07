@@ -13,7 +13,7 @@ import { MatNativeDateModule, NativeDateAdapter, provideNativeDateAdapter } from
 import { MatInputModule } from '@angular/material/input';
 import { OfferService } from '../../services/offer/offer.service';
 import { Router } from '@angular/router';
-import{MatSelectModule} from '@Angular/material/select'
+import{MatSelectModule} from '@angular/material/select'
 import { Voivodeships } from '../../models/voivodeships.enum';
 
 @Component({

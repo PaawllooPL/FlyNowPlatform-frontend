@@ -33,7 +33,9 @@ export class OfferDetailsComponent {
     this.loadOfferDetails();
   }
   ngAfterViewChecked() {
-    // Apply description container height to comments container
+    // apply description container height to comments container
+    // edit 2: dont remember exactly but it had problems with comment container size
+    // due to not being loaded yet
     let commentsContainer = document.getElementById('comments-container');
       let descriptionContainer = document.getElementById('description-container');
       if(commentsContainer && descriptionContainer) {
@@ -41,7 +43,19 @@ export class OfferDetailsComponent {
         commentsContainer.style.height = descriptionContainerHeight;
       }
   }
-
+// todo: pack into service, organizer-offer-details has same rounding utility code
+  roundOrganizerRating(value?: number): number | null {
+    if(!value || value == null)
+      return null;
+    console.log(value)
+    let fraction = value - Math.floor(value);
+    let result = Math.floor(value);
+    if(fraction >= 0.75)
+      return result+1;
+    else if(fraction >= 0.5)
+      return result+0.5;
+    else return result;
+  }
   loadOfferDetails() {
     this.route.params.subscribe(params => {
       let offerId = params['id'];

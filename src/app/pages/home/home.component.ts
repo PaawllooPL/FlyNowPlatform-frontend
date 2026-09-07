@@ -29,7 +29,7 @@ export class HomeComponent {
 
     constructor(private offerService: OfferService, private fb: FormBuilder, private router: Router) { 
         this.filterForm = this.fb.group({
-            formVoivodeships: this.fb.array([]) 
+            formVoivodeships: this.fb.array([])
         })
     }
 

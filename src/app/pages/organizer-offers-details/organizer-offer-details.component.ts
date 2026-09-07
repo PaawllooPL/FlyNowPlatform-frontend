@@ -29,7 +29,19 @@ export class OrganizerOfferDetailsComponent {
   ngOnInit() {
     this.loadOfferDetails();
   }
-
+// todo: pack into service, offer-details has same rounding utility code
+  roundOrganizerRating(value?: number): number | null {
+    if(!value || value == null)
+      return null;
+    console.log(value)
+    let fraction = value - Math.floor(value);
+    let result = Math.floor(value);
+    if(fraction >= 0.75)
+      return result+1;
+    else if(fraction >= 0.25)
+      return result+0.5;
+    else return result;
+  }
   loadOfferDetails() {
     this.route.params.subscribe(params => {
       let offerId = params['id'];

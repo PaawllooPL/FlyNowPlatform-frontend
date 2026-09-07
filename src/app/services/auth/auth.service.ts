@@ -15,26 +15,25 @@ import { Router } from '@angular/router';
 @Injectable({providedIn: 'root'})
 export class AuthService {
 
-  private apiUrl = environment.apiUrl.baseUrl + '/authentication';
   private tokenKey = 'auth_token'; //local storage key
   private refreshTokenKey = 'auth_refresh_token';
 
   constructor(private http: HttpClient, private router: Router) {}
   
   
-  public register(userData: RegisterUser): any {
+  public register(userData: RegisterUser): Observable<any> {
     console.log(userData)
     console.log(environment.apiUrl.registerUrl)
-    this.http.post<AuthTokens>(environment.apiUrl.registerUrl, userData, {
+    return this.http.post<AuthTokens>(environment.apiUrl.registerUrl, userData, {
       headers: { 
         'Content-Type': 'application/json',
         'Accept' : 'application/json' 
       }
     }).pipe(
-      tap(response => {
-        console.log("Setting jwt token...");
-        localStorage.setItem(this.tokenKey, response.authenticationToken)
-        console.log("Setted jwt token");
+      tap(response => { 
+        // console.log("Setting jwt token...");
+        // localStorage.setItem(this.tokenKey, response.authenticationToken)
+        // console.log("Setted jwt token");
       }),
       catchError(error => {
         console.error("register error: " + error);

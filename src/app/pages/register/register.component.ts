@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { signal } from '@angular/core';
 import { MatFabButton } from '@angular/material/button';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FormInputTextComponent } from '../../components/form-input-text/form-input-text.component';
 import { FormHideableInputTextComponent } from '../../components/form-hideable-input-text/form-hideable-input-text.component';
@@ -43,12 +43,20 @@ export class RegisterComponent {
   registerForm: FormGroup;
   hide = signal(true);
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private authService: AuthService, private router: Router) {
     this.registerForm = this.fb.group({});
   }
   onSubmit() {
     console.log(this.registerForm.value);
-    this.authService.register(this.registerForm.value)
+    this.authService.register(this.registerForm.value).subscribe({
+      next: result => {
+      this.router.navigate(['/login'])
+    },
+    error: error => {
+      console.error(error);
+    }
+  }
+  );
   }
   togglePasswordVisibility(event: MouseEvent) {
     this.hide.set(!this.hide());

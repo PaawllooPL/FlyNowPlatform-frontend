@@ -46,7 +46,7 @@ export class AuthInterceptor implements HttpInterceptor {
         if (!this.isRefreshing) {
           if (this.authService.getRefreshTokenLeftTime()! > 0) {// operator '!' bo isAuthenticated() już sprawdza czy token istnieje
             try {
-              this.isRefreshing = true; //without that, refresh request was triggering auth interceptor resulting in 200 refresh requests
+              this.isRefreshing = true; //without that, refresh request was triggering auth interceptor resulting in dozens of refresh requests
               const refreshTokenResponse = await lastValueFrom(this.http.post<AuthTokens>(environment.apiUrl.refreshUrl, null, //if token soon or already expired
                 {
                   observe: 'response',

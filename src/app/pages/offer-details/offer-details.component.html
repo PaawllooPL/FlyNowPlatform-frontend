@@ -29,7 +29,7 @@
                 <div class="offer-detail-container">
                     <div class="offer-detail-inner-container">
                         <div *ngIf="true" class="offer-detail-label">średnia ocena organizatora:</div>
-                        <div class="offer-detail-info">{{offerDetails?.eventOrganizerRating ?? "brak ocen"}}</div>
+                        <div class="offer-detail-info">{{roundOrganizerRating(offerDetails?.eventOrganizerRating) ?? "brak ocen"}}</div>
                     </div>
                     <div class="offer-detail-inner-container">
                         <div class="offer-detail-label">data:</div>

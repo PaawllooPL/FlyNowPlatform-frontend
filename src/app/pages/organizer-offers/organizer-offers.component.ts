@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { OrganizerOfferPreview } from '../../models/offer/organizerOfferPreview.interface';
 import { OfferService } from '../../services/offer/offer.service';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 import { Voivodeships } from '../../models/voivodeships.enum';
 
 @Component({

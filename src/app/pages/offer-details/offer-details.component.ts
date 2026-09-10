@@ -7,7 +7,7 @@ import { ListButtonComponent } from '../../components/list-button/list-button.co
 import { CommentComponent } from '../../components/comment/comment.component';
 import { CommentContainerComponent } from '../../components/comment-container/comment-container.component';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 import { AuthService } from '../../services/auth/auth.service';
 import { Permission } from '../../models/permissions/permissions.enum';
 import { Voivodeships } from '../../models/voivodeships.enum';

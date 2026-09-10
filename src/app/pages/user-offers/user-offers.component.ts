@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OfferService } from '../../services/offer/offer.service';
 import { OfferPreview } from '../../models/offer/offerPreview.interface';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { MatIcon } from '@angular/material/icon';
 import { OfferTabComponent } from '../../components/offer-tab/offer-tab.component';

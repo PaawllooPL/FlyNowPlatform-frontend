@@ -6,7 +6,7 @@ import { OfferService } from '../../services/offer/offer.service';
 import { CommonModule, formatCurrency } from '@angular/common';
 import { OfferPreview } from '../../models/offer/offerPreview.interface';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 import { Voivodeships } from '../../models/voivodeships.enum';
 import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ListButtonContainerComponent } from "../../components/list-button-container/list-button-container.component";

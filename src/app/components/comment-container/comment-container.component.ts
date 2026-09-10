@@ -6,7 +6,7 @@ import { NgIf } from '@angular/common';
 import { OfferService } from '../../services/offer/offer.service';
 import { AddComment } from '../../models/comment/addComment.interface';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-comment-container',

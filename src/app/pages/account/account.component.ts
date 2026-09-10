@@ -6,7 +6,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import { NgIf } from '@angular/common';
 import { Roles } from '../../models/roles.enum';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-account',

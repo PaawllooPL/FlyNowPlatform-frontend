@@ -1,14 +1,14 @@
+
 export const environment = {
     apiUrl: {
         baseUrl: 'http://localhost:8080/api/v1',
-        // baseUrl: 'http://192.168.1.20:8080/api/v1',
         allOffers: '/offers',
         filteredOffers: '/offers/filtered',
         offerDetails: '/details',
         register: '/authentication/register',
         login: '/authentication/login',
         refresh: '/authentication/refresh',
-        image: '/image',
+        offerImage: '/image',
         createOffer: '/offers/create',
         buy: '/buy',
         createCompany: '/company/create',
@@ -29,7 +29,7 @@ export const environment = {
         
         offerDetailsUrl(flightId: number) {return `${this.baseUrl}${this.allOffers}/${flightId}${this.offerDetails}`;},
         organizerOfferDetailsUrl(flightId: number) {return `${this.baseUrl}${this.allOffers}${this.organizerOffers}/${flightId}${this.offerDetails}`;},
-        offerImageUrl(imageFilename: string){return `${this.baseUrl}${this.image}/${imageFilename}`;},
+        offerImageUrl(imageFilename: string){return `${this.baseUrl}${this.offerImage}/${imageFilename}`;},
         buyOfferUrl(flightId: number) {return `${this.baseUrl}${this.allOffers}/${flightId}${this.buy}`;},
     },
     appUrl: {

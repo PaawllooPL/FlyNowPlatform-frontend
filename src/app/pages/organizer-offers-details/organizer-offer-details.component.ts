@@ -6,7 +6,7 @@ import { OrganizerOfferDetails } from '../../models/offer/organizerOfferDetails.
 import { ActivatedRoute, Router } from '@angular/router';
 import { OfferService } from '../../services/offer/offer.service';
 import { AuthService } from '../../services/auth/auth.service';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 import { Voivodeships } from '../../models/voivodeships.enum';
 
 @Component({

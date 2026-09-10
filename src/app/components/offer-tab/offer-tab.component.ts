@@ -3,7 +3,7 @@ import { MatIcon } from '@angular/material/icon';
 import { ListButtonComponent } from '../list-button/list-button.component';
 import { MatFabButton } from '@angular/material/button';
 import { ListButtonContainerComponent } from '../list-button-container/list-button-container.component';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({

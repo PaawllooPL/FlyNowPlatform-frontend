@@ -11,7 +11,7 @@ import { FormHideableInputTextComponent } from '../../components/form-hideable-i
 import { ListButtonContainerComponent } from '../../components/list-button-container/list-button-container.component';
 import { ListButtonComponent } from '../../components/list-button/list-button.component';
 import { ListSubmitButtonComponent } from "../../components/list-submit-button/list-submit-button.component";
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 import { AuthService } from '../../services/auth/auth.service';
 import { HttpClient } from '@angular/common/http';
 

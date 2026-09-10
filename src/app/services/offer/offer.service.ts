@@ -3,7 +3,7 @@ import { delay, Observable, of, throwError } from 'rxjs';
 import { OfferPreview } from '../../models/offer/offerPreview.interface';
 import { OfferDetails } from '../../models/offer/offerDetails.interface';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 import { OrganizerOfferPreview } from '../../models/offer/organizerOfferPreview.interface';
 import { OrganizerOfferDetails } from '../../models/offer/organizerOfferDetails.interface';
 import { AddComment } from '../../models/comment/addComment.interface';

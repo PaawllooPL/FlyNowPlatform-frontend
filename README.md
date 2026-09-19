@@ -1,27 +1,68 @@
-# FlyNow
+# FlyNow (front-end)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+FlyNow was engineering thesis project that solves problem of connecting pilots with clients. Everyone can book flight or become organizer and offer others flights.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Main purpose of project was to create web application that specifically (and only) helps people find sightseeing flights offers.
+Unlike many others it focuses clearly on aviation part of business instead of aggregating all types of market offers.
 
-## Code scaffolding
+## Technologies for front-end
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Angular (v18)
+* Docker
+* JWT
+App is secured with custom AuthGuards that retrieve request and check if user has required claims in JWT Token.
+Some router paths have custom data attached with RoleEnum values to prevent certain endpoints from unauthorized users.
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Logging/registering
+* Filtering offers and checking details
+* Buying, creating company and offers
+* Comment and rating system
 
-## Running unit tests
+## Screenshots
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Main View
 
-## Running end-to-end tests
+![Main View](images/offers.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Register panel
 
-## Further help
+![Register panel](images/register.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Offer details (1/2)
+
+![Offer details (1/2)](images/offer_details_up.png)
+
+### Offer details (2/2)
+
+![Offer details (2/2)](images/offer_details_down.png)
+
+
+### Account menu - create company submenu
+
+![Submenu - create company](images/create_company.png)
+
+## Getting Started
+
+### Requirements
+Angular v18 or docker supporting linux
+npm
+
+### Installation & running locally
+Check src/environments/environment.development.ts, as it is configured for default spring boot local port. (Check backend https://github.com/PaawllooPL/FlyNowPlatform-backend.git)
+```bash
+git clone https://github.com/PaawllooPL/FlyNowPlatform-frontend.git
+cd FlyNowPlatform-frontend
+npm run start
+```
+
+## Project Structure
+
+Main source code is divided into components, dto, models, pages (utilizing components) and services. 
+
+## Author
+
+PaawllooPL(https://github.com/PaawllooPL)

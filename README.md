@@ -1,7 +1,7 @@
 # FlyNow (front-end)
 
 FlyNow was engineering thesis project that solves problem of connecting pilots with clients. Everyone can book flight or become organizer and offer others flights.
-See it at: https://flynow-mhj9.onrender.com/login
+See it at: https://flynow-mhj9.onrender.com/
 
 ## Overview
 
